@@ -20,7 +20,8 @@
     <span class="explorer-dot"></span>
     <span class="explorer-title">kimsohyun</span>
   </div>
-  <ul class="explorer-list">
+  <ul class="explorer-list" id="explorerList">
+    <div class="explorer-highlight" id="explorerHighlight" aria-hidden="true"></div>
     <li><a href="#intro" class="explorer-link is-active" data-target="intro"><span class="file-ext">~/</span>intro.md</a></li>
     <li><a href="#about" class="explorer-link" data-target="about"><span class="file-ext">~/</span>about.md</a></li>
     <li><a href="#projects" class="explorer-link" data-target="projects"><span class="file-ext">~/</span>projects</a></li>
@@ -45,20 +46,48 @@
 
   <!-- ===== INTRO / HERO ===== -->
   <section id="intro" class="section hero">
-    <p class="eyebrow">PORTFOLIO — FRONTEND DEVELOPER</p>
-    <h1 class="hero-name">김소현<span class="cursor" aria-hidden="true">_</span></h1>
-    <p class="hero-role">Frontend Developer <span class="hero-role-sub">/ Full-Stack 경험</span></p>
-    <p class="hero-statement">“사용자에게 도움이 되는 서비스를 만드는<br class="br-mobile"> 개발자가 되고 싶습니다.”</p>
-    <div class="hero-tags">
-      <span class="tag">Next.js</span>
-      <span class="tag">TypeScript</span>
-      <span class="tag">React</span>
-      <span class="tag">Tailwind CSS</span>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">PORTFOLIO — FRONTEND DEVELOPER</p>
+        <h1 class="hero-name">김소현<span class="cursor" aria-hidden="true">_</span></h1>
+        <p class="hero-role">Frontend Developer <span class="hero-role-sub">/ Full-Stack 경험</span></p>
+        <p class="hero-statement">“사용자에게 도움이 되는 서비스를 만드는<br class="br-mobile"> 개발자가 되고 싶습니다.”</p>
+        <div class="hero-tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">React</span>
+          <span class="tag">Tailwind CSS</span>
+        </div>
+        <a href="#projects" class="scroll-cue" data-target="projects">
+          <span>프로젝트 보기</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5L7 10L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="code-card">
+          <div class="code-card-head">
+            <span class="dot dot-a"></span><span class="dot dot-b"></span><span class="dot dot-c"></span>
+            <span class="code-card-name">profile.ts</span>
+          </div>
+          <pre class="code-card-body"><span class="c-kw">const</span> <span class="c-var">developer</span> = {
+  <span class="c-key">name</span>: <span class="c-str">"김소현"</span>,
+  <span class="c-key">role</span>: <span class="c-str">"Frontend Developer"</span>,
+  <span class="c-key">stack</span>: [<span class="c-str">"Next.js"</span>, <span class="c-str">"TypeScript"</span>],
+  <span class="c-key">projects</span>: <span class="c-num">2</span>,
+  <span class="c-key">focus</span>: <span class="c-str">"user-first"</span>,
+}<span class="cursor2">|</span></pre>
+        </div>
+        <div class="stat-chip stat-chip-a">
+          <span class="stat-num">2</span>
+          <span class="stat-label">팀 프로젝트</span>
+        </div>
+        <div class="stat-chip stat-chip-b">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">프론트 담당</span>
+        </div>
+      </div>
     </div>
-    <a href="#projects" class="scroll-cue" data-target="projects">
-      <span>프로젝트 보기</span>
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5L7 10L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
   </section>
 
   <!-- ===== ABOUT ===== -->
@@ -66,17 +95,32 @@
     <p class="section-num">01</p>
     <h2 class="section-title">about.md</h2>
     <div class="about-grid">
-      <p class="about-lead">
-        풀스택 개발 과정을 거치며 진행한 미니 프로젝트와 파이널 프로젝트 모두에서
-        <strong>프론트엔드 개발을 전담</strong>했습니다.
-        Next.js와 TypeScript를 기반으로 화면을 설계하고, Tailwind CSS로
-        일관된 UI를 만드는 과정을 좋아합니다.
-      </p>
-      <p class="about-sub">
-        백엔드(Flask, FastAPI) 팀원들과 협업하며 API 연동, Git 브랜치 전략 수립 등
-        풀스택 관점에서 서비스 전체 구조를 이해하려 노력하고 있습니다.
-        결국 목표는 하나, <em>사용하는 사람에게 실제로 도움이 되는 서비스</em>를 만드는 것입니다.
-      </p>
+      <div class="about-copy">
+        <p class="about-lead">
+          풀스택 개발 과정을 거치며 진행한 미니 프로젝트와 파이널 프로젝트 모두에서
+          <strong>프론트엔드 개발을 전담</strong>했습니다.
+          Next.js와 TypeScript를 기반으로 화면을 설계하고, Tailwind CSS로
+          일관된 UI를 만드는 과정을 좋아합니다.
+        </p>
+        <p class="about-sub">
+          백엔드(Flask, FastAPI) 팀원들과 협업하며 API 연동, Git 브랜치 전략 수립 등
+          풀스택 관점에서 서비스 전체 구조를 이해하려 노력하고 있습니다.
+          결국 목표는 하나, <em>사용하는 사람에게 실제로 도움이 되는 서비스</em>를 만드는 것입니다.
+        </p>
+      </div>
+      <div class="about-side">
+        <div class="side-card">
+          <p class="side-num">02</p>
+          <p class="side-label">완성한 팀 프로젝트</p>
+        </div>
+        <div class="side-card">
+          <p class="side-num">4+</p>
+          <p class="side-label">협업한 백엔드 스택<br>(Flask · FastAPI)</p>
+        </div>
+        <div class="side-card side-card-accent">
+          <p class="side-quote">"화면 너머의<br>사용자를 먼저 생각합니다"</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -87,6 +131,7 @@
 
     <!-- Project 01 -->
     <article class="project">
+      <span class="project-index">01</span>
       <div class="project-head">
         <div>
           <p class="project-type">MINI PROJECT · TEAM</p>
@@ -110,6 +155,7 @@
 
     <!-- Project 02 -->
     <article class="project">
+      <span class="project-index">02</span>
       <div class="project-head">
         <div>
           <p class="project-type">FINAL PROJECT · TEAM</p>
@@ -165,7 +211,7 @@
     <div class="contact-links">
       <!-- TODO(소현): 이메일/GitHub/LinkedIn 등 실제 링크로 교체해주세요 -->
       <a href="https://github.com/soda1102" class="contact-link">GitHub</a>
-      <a href="jenny110201@gmail.com" class="contact-link">Email</a>
+      <a href="#" class="contact-link">Email</a>
     </div>
     <p class="footer-note">© 2026 Kim Sohyun. Built with care.</p>
   </section>
