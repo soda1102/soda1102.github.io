@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김소현 — Frontend Developer</title>
+<meta name="description" content="사용자에게 도움이 되는 서비스를 만드는 프론트엔드 개발자 김소현의 포트폴리오">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grid-bg" aria-hidden="true"></div>
+
+<!-- 좌측 파일 탐색기 스타일 내비게이션 -->
+<nav class="explorer" id="explorer">
+  <div class="explorer-head">
+    <span class="explorer-dot"></span>
+    <span class="explorer-title">kimsohyun</span>
+  </div>
+  <ul class="explorer-list">
+    <li><a href="#intro" class="explorer-link is-active" data-target="intro"><span class="file-ext">~/</span>intro.md</a></li>
+    <li><a href="#about" class="explorer-link" data-target="about"><span class="file-ext">~/</span>about.md</a></li>
+    <li><a href="#projects" class="explorer-link" data-target="projects"><span class="file-ext">~/</span>projects</a></li>
+    <li><a href="#skills" class="explorer-link" data-target="skills"><span class="file-ext">~/</span>skills.json</a></li>
+    <li><a href="#contact" class="explorer-link" data-target="contact"><span class="file-ext">~/</span>contact.md</a></li>
+  </ul>
+  <div class="explorer-foot">
+    <span class="status-dot"></span> build: portfolio@1.0
+  </div>
+</nav>
+
+<!-- 모바일 상단 내비게이션 -->
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#intro" class="is-active" data-target="intro">intro</a>
+  <a href="#about" data-target="about">about</a>
+  <a href="#projects" data-target="projects">projects</a>
+  <a href="#skills" data-target="skills">skills</a>
+  <a href="#contact" data-target="contact">contact</a>
+</nav>
+
+<main>
+
+  <!-- ===== INTRO / HERO ===== -->
+  <section id="intro" class="section hero">
+    <p class="eyebrow">PORTFOLIO — FRONTEND DEVELOPER</p>
+    <h1 class="hero-name">김소현<span class="cursor" aria-hidden="true">_</span></h1>
+    <p class="hero-role">Frontend Developer <span class="hero-role-sub">/ Full-Stack 경험</span></p>
+    <p class="hero-statement">“사용자에게 도움이 되는 서비스를 만드는<br class="br-mobile"> 개발자가 되고 싶습니다.”</p>
+    <div class="hero-tags">
+      <span class="tag">Next.js</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">React</span>
+      <span class="tag">Tailwind CSS</span>
+    </div>
+    <a href="#projects" class="scroll-cue" data-target="projects">
+      <span>프로젝트 보기</span>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5L7 10L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section">
+    <p class="section-num">01</p>
+    <h2 class="section-title">about.md</h2>
+    <div class="about-grid">
+      <p class="about-lead">
+        풀스택 개발 과정을 거치며 진행한 미니 프로젝트와 파이널 프로젝트 모두에서
+        <strong>프론트엔드 개발을 전담</strong>했습니다.
+        Next.js와 TypeScript를 기반으로 화면을 설계하고, Tailwind CSS로
+        일관된 UI를 만드는 과정을 좋아합니다.
+      </p>
+      <p class="about-sub">
+        백엔드(Flask, FastAPI) 팀원들과 협업하며 API 연동, Git 브랜치 전략 수립 등
+        풀스택 관점에서 서비스 전체 구조를 이해하려 노력하고 있습니다.
+        결국 목표는 하나, <em>사용하는 사람에게 실제로 도움이 되는 서비스</em>를 만드는 것입니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section">
+    <p class="section-num">02</p>
+    <h2 class="section-title">projects</h2>
+
+    <!-- Project 01 -->
+    <article class="project">
+      <div class="project-head">
+        <div>
+          <p class="project-type">MINI PROJECT · TEAM</p>
+          <h3 class="project-title">도(道)서관 <span class="project-title-en">— The Road Library</span></h3>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/MBCAcademy3-3Team/the-road-library" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="http://the-road-library.ejjang2030.kr/" target="_blank" rel="noopener">Live Demo ↗</a>
+        </div>
+      </div>
+      <p class="project-desc">
+        AI로 도로 위 위험 요소를 실시간으로 분석하고, 운전자들이 서로의 경험과 지식을
+        공유할 수 있는 안전 주행 통합 플랫폼입니다. YOLOv11 기반 영상 분석과
+        커뮤니티 기능을 결합했습니다.
+      </p>
+      <p class="project-role"><span class="role-label">담당</span> 게시판(도란도란) 기능 설계 및 프론트엔드 구현</p>
+      <ul class="project-stack">
+        <li>HTML/CSS/JS</li><li>Bootstrap</li><li>Flask</li><li>YOLOv11</li><li>OpenCV</li><li>MySQL</li>
+      </ul>
+    </article>
+
+    <!-- Project 02 -->
+    <article class="project">
+      <div class="project-head">
+        <div>
+          <p class="project-type">FINAL PROJECT · TEAM</p>
+          <h3 class="project-title">Weather-AI</h3>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/WeatherAI-Team/weather-ai" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+      <p class="project-desc">
+        Next.js, Flask, FastAPI 세 개의 서버로 구성된 AI 서비스 모델 생성·관리
+        시스템입니다. 프론트엔드 서버와 메인/AI 백엔드 서버를 분리한 구조 속에서
+        사용자 화면을 담당했습니다.
+      </p>
+      <p class="project-role"><span class="role-label">담당</span> 프론트엔드(Next.js) 전체 화면 개발</p>
+      <ul class="project-stack">
+        <li>Next.js</li><li>TypeScript</li><li>Flask</li><li>FastAPI</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section">
+    <p class="section-num">03</p>
+    <h2 class="section-title">skills.json</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <p class="skill-key">"frontend"</p>
+        <ul class="skill-values">
+          <li>Next.js</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>JavaScript</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <p class="skill-key">"collaboration"</p>
+        <ul class="skill-values">
+          <li>Git / GitHub</li><li>브랜치 전략 수립</li><li>REST API 연동</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <p class="skill-key">"interested_in"</p>
+        <ul class="skill-values">
+          <li>AI 연동 서비스</li><li>UI/UX 디자인 시스템</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section contact-section">
+    <p class="section-num">04</p>
+    <h2 class="section-title">contact.md</h2>
+    <p class="contact-lead">함께 이야기 나누고 싶다면 편하게 연락 주세요.</p>
+    <div class="contact-links">
+      <!-- TODO(소현): 이메일/GitHub/LinkedIn 등 실제 링크로 교체해주세요 -->
+      <a href="https://github.com/soda1102" class="contact-link">GitHub</a>
+      <a href="jenny110201@gmail.com" class="contact-link">Email</a>
+    </div>
+    <p class="footer-note">© 2026 Kim Sohyun. Built with care.</p>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
