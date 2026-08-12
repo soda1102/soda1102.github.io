@@ -528,6 +528,28 @@ main {
   margin: 0 0 16px;
 }
 
+.project-shot {
+  margin: 0 0 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.project-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-shot figcaption {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  padding: 10px 14px;
+  border-top: 1px solid var(--line);
+}
+
 .project-role {
   font-size: 14px;
   color: var(--ink-soft);
