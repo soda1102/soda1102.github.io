@@ -172,7 +172,7 @@
           <span class="feature-tag">공지 고정</span>
         </div>
         <p class="built-desc">
-          게시판(도란도란)에서 사용자가 콘텐츠를 생성하고 상호작용할 수 있도록, 주요 커뮤니티
+          게시판(도란도란)에서 사용자가 콘텐츠를 생성하고 상호작용할 수 있도록 주요 커뮤니티
           기능을 프론트엔드부터 백엔드(Flask)까지 직접 구현했습니다.
         </p>
       </div>
@@ -324,7 +324,7 @@
         <div class="solve-pcs">
           <p><span class="pcs-key">Problem</span>동물 탐지 모델 학습 중 클래스별 라벨링 수가 크게 어긋난 걸 발견 (예: 산토끼류 3,467개 vs 다른 클래스 500개 내외).</p>
           <p><span class="pcs-key">Cause</span>과도한 전처리(로보플로 증강) 옵션 사용으로 데이터셋이 비정상적으로 생성됨.</p>
-          <p><span class="pcs-key">Solution</span>클래스를 3종(멧돼지·너구리·고라니)으로 재구성하고 전처리를 걷어낸 뒤, YOLO 자체 증강 옵션으로 재학습해 과대적합을 줄임.</p>
+          <p><span class="pcs-key">Solution</span>클래스를 3종(멧돼지·너구리·고라니)으로 재구성하고 전처리를 걷어낸 뒤 YOLO 자체 증강 옵션으로 재학습해 과대적합을 줄임.</p>
         </div>
       </div>
       <div class="solve-card">
@@ -333,7 +333,7 @@
         <div class="solve-pcs">
           <p><span class="pcs-key">Problem</span>YOLO 학습 시 어떤 옵티마이저가 더 안정적인 성능을 내는지 확인이 필요했음.</p>
           <p><span class="pcs-key">Cause</span>AdamW는 수렴은 빨랐지만 학습 데이터에 과도하게 맞춰지는(과적합) 경향을 보임.</p>
-          <p><span class="pcs-key">Solution</span>100 epoch 기준 SGD와 AdamW를 직접 비교 실험해, 일반화 성능이 더 좋은 SGD를 최종 채택 — mAP를 유의미하게 개선.</p>
+          <p><span class="pcs-key">Solution</span>100 epoch 기준 SGD와 AdamW를 직접 비교 실험해 일반화 성능이 더 좋은 SGD를 최종 채택 — mAP를 유의미하게 개선.</p>
         </div>
       </div>
       <div class="solve-card">
@@ -355,7 +355,7 @@
         <div class="solve-pcs">
           <p><span class="pcs-key">Problem</span>관리자 대시보드에서 API를 정상 호출했는데도 일부 데이터가 화면에 표시되지 않음.</p>
           <p><span class="pcs-key">Cause</span>Flask API 응답의 필드명과 실제 DB 컬럼명이 서로 달라 프론트에서 값을 제대로 매칭하지 못함.</p>
-          <p><span class="pcs-key">Solution</span>백엔드 코드를 직접 확인해 필드명 불일치 구간을 찾아 수정하고, 프론트와 정상 연동되는지 재검증함.</p>
+          <p><span class="pcs-key">Solution</span>백엔드 코드를 직접 확인해 필드명 불일치 구간을 찾아 수정하고 프론트와 정상 연동되는지 재검증함.</p>
         </div>
       </div>
     </div>
@@ -399,7 +399,7 @@
   <section id="contact" class="section contact-section">
     <p class="section-num">05</p>
     <h2 class="section-title">contact.md</h2>
-    <p class="contact-lead">함께 이야기 나누고 싶다면 편하게 연락 주세요.</p>
+    <p class="contact-lead">편하게 연락 주세요.</p>
     <div class="contact-links">
       <a href="https://github.com/soda1102" target="_blank" rel="noopener" class="contact-link">GitHub</a>
       <a href="mailto:jenny110201@gmail.com" class="contact-link">Email</a>
