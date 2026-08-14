@@ -560,7 +560,9 @@ main {
 
 .project-links {
   display: flex;
-  gap: 14px;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
   font-family: var(--font-mono);
   font-size: 12.5px;
 }
@@ -571,6 +573,15 @@ main {
 }
 
 .project-links a:hover { border-color: var(--accent-ink); }
+
+.project-link-highlight {
+  padding: 3px 10px;
+  background: var(--accent-soft);
+  color: var(--accent-ink) !important;
+  border-radius: 999px;
+  border-bottom: none !important;
+  font-weight: 600;
+}
 
 /* 프로젝트 메타 정보바 */
 .project-meta {
