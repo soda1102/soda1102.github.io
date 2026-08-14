@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>김소현 — Frontend Developer</title>
 <meta name="description" content="사용자에게 도움이 되는 서비스를 만드는 프론트엔드 개발자 김소현의 포트폴리오">
+<script>
+(function () {
+  try {
+    var theme = localStorage.getItem('portfolio-theme') || 'periwinkle';
+    var mode = localStorage.getItem('portfolio-mode') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.setAttribute('data-mode', mode);
+  } catch (e) {}
+})();
+</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -121,7 +131,7 @@
           <p class="side-label">백엔드 기술 경험<br>(Flask · FastAPI)</p>
         </div>
         <div class="side-card side-card-accent">
-          <p class="side-quote">"화면 너머의<br> 사용자를 먼저 생각합니다"</p>
+          <p class="side-quote">"화면 너머의<br>사용자를 먼저 생각합니다"</p>
         </div>
       </div>
     </div>
@@ -172,7 +182,7 @@
           <span class="feature-tag">공지 고정</span>
         </div>
         <p class="built-desc">
-          게시판(도란도란)에서 사용자가 콘텐츠를 생성하고 상호작용할 수 있도록 주요 커뮤니티
+          게시판(도란도란)에서 사용자가 콘텐츠를 생성하고 상호작용할 수 있도록, 주요 커뮤니티
           기능을 프론트엔드부터 백엔드(Flask)까지 직접 구현했습니다.
         </p>
       </div>
@@ -223,7 +233,7 @@
       </div>
 
       <figure class="project-shot">
-        <img src="images/weather-ai-dashboard.jpg" alt="Weather-AI 관리자 대시보드 — AI 분석 보고서와 알림 이력 화면" loading="lazy">
+        <img src="images/weather-ai-dashboard.jpg" alt="Weather-AI 관리자 대시보드 — AI 분석 보고서와 CCTV 알림 화면" loading="lazy">
         <figcaption>관리자 대시보드 · 실시간 위험 탐지 알림 화면</figcaption>
       </figure>
 
@@ -264,7 +274,7 @@
           <div class="built-item">
             <p class="built-item-title">Backend Contribution</p>
             <ul>
-              <li>관제센터(AI관제센터, 알림이력) 백엔드 로직 및 처리 구현</li>
+              <li>AI 관제센터(CCTV 모니터링) 백엔드 로직 및 알림 이력(Notifications) 처리 구현</li>
               <li>관련 테이블 DB 설계 및 연동</li>
               <li>Flask API 응답 필드명과 DB 컬럼명이 달라 데이터가 표시되지 않는 문제를
                 직접 확인·수정하고 프론트와 재연동 검증</li>
@@ -277,7 +287,7 @@
 
       <p class="project-role">
         <span class="role-label">담당</span>
-        Next.js를 활용한 관리자 대시보드 화면 개발 및 UI 구현 · 관제센터(AI 관제센터, 알림 이력)
+        Next.js를 활용한 관리자 대시보드 화면 개발 및 UI 구현 · AI 관제센터(CCTV 모니터링·알림 이력)
         백엔드 및 DB 개발 · 팀원과 협업하여 서비스 구현
         <span class="role-note">(LLM 분석 모듈은 팀원이 작성한 코드를 연동해 사용)</span>
       </p>
@@ -297,11 +307,11 @@
           </span>
         </div>
         <div class="arch-legend">
-          <span class="legend-dot legend-mine"></span>나의 개발 영역 (Frontend · Backend)
+          <span class="legend-dot legend-mine"></span>My Area (Frontend)
           <span class="legend-dot legend-team"></span>팀원 개발 영역 (Backend · AI · DB)
         </div>
         <p class="arch-caption">
-          Frontend를 담당하면서 Backend · AI Server · DB가 연결되는 전체 서비스 흐름을
+          Frontend를 담당하면서 Backend·AI Server·DB가 연결되는 전체 서비스 흐름을
           이해하고 개발했습니다.
         </p>
       </div>
@@ -312,7 +322,7 @@
     </article>
   </section>
 
-  <!-- ===== 문제 해결방법 ===== -->
+  <!-- ===== 문제 해결 방법 ===== -->
   <section id="solving" class="section">
     <p class="section-num">03</p>
     <h2 class="section-title">troubleshoot.md</h2>
@@ -324,7 +334,7 @@
         <div class="solve-pcs">
           <p><span class="pcs-key">Problem</span>동물 탐지 모델 학습 중 클래스별 라벨링 수가 크게 어긋난 걸 발견 (예: 산토끼류 3,467개 vs 다른 클래스 500개 내외).</p>
           <p><span class="pcs-key">Cause</span>과도한 전처리(로보플로 증강) 옵션 사용으로 데이터셋이 비정상적으로 생성됨.</p>
-          <p><span class="pcs-key">Solution</span>클래스를 3종(멧돼지·너구리·고라니)으로 재구성하고 전처리를 걷어낸 뒤 YOLO 자체 증강 옵션으로 재학습해 과대적합을 줄임.</p>
+          <p><span class="pcs-key">Solution</span>클래스를 3종(멧돼지·너구리·고라니)으로 재구성하고 전처리를 걷어낸 뒤, YOLO 자체 증강 옵션으로 재학습해 과대적합을 줄임.</p>
         </div>
       </div>
       <div class="solve-card">
@@ -333,7 +343,7 @@
         <div class="solve-pcs">
           <p><span class="pcs-key">Problem</span>YOLO 학습 시 어떤 옵티마이저가 더 안정적인 성능을 내는지 확인이 필요했음.</p>
           <p><span class="pcs-key">Cause</span>AdamW는 수렴은 빨랐지만 학습 데이터에 과도하게 맞춰지는(과적합) 경향을 보임.</p>
-          <p><span class="pcs-key">Solution</span>100 epoch 기준 SGD와 AdamW를 직접 비교 실험해 일반화 성능이 더 좋은 SGD를 최종 채택 — mAP를 유의미하게 개선.</p>
+          <p><span class="pcs-key">Solution</span>100 epoch 기준 SGD와 AdamW를 직접 비교 실험해, 일반화 성능이 더 좋은 SGD를 최종 채택 — mAP를 유의미하게 개선.</p>
         </div>
       </div>
       <div class="solve-card">
@@ -355,7 +365,7 @@
         <div class="solve-pcs">
           <p><span class="pcs-key">Problem</span>관리자 대시보드에서 API를 정상 호출했는데도 일부 데이터가 화면에 표시되지 않음.</p>
           <p><span class="pcs-key">Cause</span>Flask API 응답의 필드명과 실제 DB 컬럼명이 서로 달라 프론트에서 값을 제대로 매칭하지 못함.</p>
-          <p><span class="pcs-key">Solution</span>백엔드 코드를 직접 확인해 필드명 불일치 구간을 찾아 수정하고 프론트와 정상 연동되는지 재검증함.</p>
+          <p><span class="pcs-key">Solution</span>백엔드 코드를 직접 확인해 필드명 불일치 구간을 찾아 수정하고, 프론트와 정상 연동되는지 재검증함.</p>
         </div>
       </div>
     </div>
@@ -408,6 +418,18 @@
   </section>
 
 </main>
+
+<div class="theme-switcher" id="themeSwitcher" role="group" aria-label="테마 색상 선택">
+  <button class="theme-dot" data-theme="periwinkle" style="--dot-color:#6E7FA8" aria-label="페리윙클 테마"></button>
+  <button class="theme-dot" data-theme="green" style="--dot-color:#7C9A46" aria-label="연두색 테마"></button>
+  <button class="theme-dot" data-theme="yellow" style="--dot-color:#C89A3E" aria-label="노란색 테마"></button>
+  <button class="theme-dot" data-theme="orange" style="--dot-color:#CC7A3E" aria-label="주황색 테마"></button>
+  <span class="theme-switcher-divider" aria-hidden="true"></span>
+  <button class="mode-toggle" id="modeToggle" aria-label="다크모드 전환">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
+  </button>
+</div>
 
 <script src="script.js"></script>
 </body>
