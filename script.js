@@ -54,3 +54,37 @@ document.querySelectorAll('[data-target]').forEach(el => {
     }
   });
 });
+
+// 테마 색상 / 다크모드 스위처
+const root = document.documentElement;
+const THEME_KEY = 'portfolio-theme';
+const MODE_KEY = 'portfolio-mode';
+const themeDots = document.querySelectorAll('.theme-dot');
+const modeToggle = document.getElementById('modeToggle');
+
+const applyTheme = (theme) => {
+  root.setAttribute('data-theme', theme);
+  try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+  themeDots.forEach(dot => dot.classList.toggle('is-active', dot.dataset.theme === theme));
+};
+
+const applyMode = (mode) => {
+  root.setAttribute('data-mode', mode);
+  try { localStorage.setItem(MODE_KEY, mode); } catch (e) {}
+};
+
+const savedTheme = (() => { try { return localStorage.getItem(THEME_KEY); } catch (e) { return null; } })() || 'periwinkle';
+const savedMode = (() => { try { return localStorage.getItem(MODE_KEY); } catch (e) { return null; } })() || 'light';
+applyTheme(savedTheme);
+applyMode(savedMode);
+
+themeDots.forEach(dot => {
+  dot.addEventListener('click', () => applyTheme(dot.dataset.theme));
+});
+
+if (modeToggle) {
+  modeToggle.addEventListener('click', () => {
+    const next = root.getAttribute('data-mode') === 'dark' ? 'light' : 'dark';
+    applyMode(next);
+  });
+}
