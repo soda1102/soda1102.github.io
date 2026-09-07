@@ -60,7 +60,7 @@ const root = document.documentElement;
 const THEME_KEY = 'portfolio-theme';
 const MODE_KEY = 'portfolio-mode';
 const themeDots = document.querySelectorAll('.theme-dot');
-const modeToggle = document.getElementById('modeToggle');
+const modeToggles = document.querySelectorAll('.mode-toggle');
 
 const applyTheme = (theme) => {
   root.setAttribute('data-theme', theme);
@@ -82,9 +82,43 @@ themeDots.forEach(dot => {
   dot.addEventListener('click', () => applyTheme(dot.dataset.theme));
 });
 
-if (modeToggle) {
-  modeToggle.addEventListener('click', () => {
+modeToggles.forEach(toggle => {
+  toggle.addEventListener('click', () => {
     const next = root.getAttribute('data-mode') === 'dark' ? 'light' : 'dark';
     applyMode(next);
+  });
+});
+
+// 스크롤 등장 애니메이션 — 카드/블록들이 화면에 들어올 때 살짝 떠오르며 나타남
+const revealTargets = document.querySelectorAll(
+  '.project, .about-side .side-card, .solve-card, .skill-group, .built-block, .arch-block'
+);
+revealTargets.forEach(el => el.classList.add('reveal'));
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
+);
+revealTargets.forEach(el => revealObserver.observe(el));
+
+// 히어로 코드카드 — 마우스 움직임에 따라 은은하게 기울어지는 틸트 효과
+const codeCard = document.querySelector('.code-card');
+if (codeCard && window.matchMedia('(hover: hover)').matches) {
+  const heroVisual = document.querySelector('.hero-visual');
+  heroVisual.addEventListener('mousemove', (e) => {
+    const rect = heroVisual.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    codeCard.style.transform = `rotate(2deg) rotateX(${y * -6}deg) rotateY(${x * 8}deg)`;
+  });
+  heroVisual.addEventListener('mouseleave', () => {
+    codeCard.style.transform = 'rotate(2deg)';
   });
 }
