@@ -542,6 +542,74 @@ main {
   margin: 0;
 }
 
+/* ===== 프로젝트 필터 탭 ===== */
+.project-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 30px;
+}
+
+.project-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 19px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-raised);
+  color: var(--ink-soft);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.project-tab:hover {
+  border-color: var(--accent-ink);
+  color: var(--accent-ink);
+}
+
+.project-tab.is-active {
+  background: var(--accent-soft);
+  border-color: var(--accent-ink);
+  color: var(--accent-ink);
+}
+
+.tab-count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.project-tab:focus-visible {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 3px;
+}
+
+/* 숨긴 프로젝트는 표시하지 않음 */
+.project[hidden] {
+  display: none !important;
+}
+
+/* 모바일 */
+@media (max-width: 560px) {
+  .project-tabs {
+    gap: 8px;
+  }
+
+  .project-tab {
+    padding: 10px 13px;
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .tab-count {
+    font-size: 11px;
+  }
+}
+
 /* ===== 프로젝트 ===== */
 .project {
   position: relative;
