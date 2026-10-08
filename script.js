@@ -122,3 +122,54 @@ if (codeCard && window.matchMedia('(hover: hover)').matches) {
     codeCard.style.transform = 'rotate(2deg)';
   });
 }
+
+/* ===== 프로젝트 필터 ===== */
+const projectTabs = document.querySelectorAll('.project-tab');
+const projects = document.querySelectorAll(
+  '#projects .project[data-category]'
+);
+
+// 프로젝트 개수 자동 계산
+const teamCount = document.querySelectorAll(
+  '#projects .project[data-category="team"]'
+).length;
+
+const personalCount = document.querySelectorAll(
+  '#projects .project[data-category="personal"]'
+).length;
+
+const totalCount = projects.length;
+
+// 탭에 프로젝트 개수 표시
+document.getElementById('allCount').textContent = totalCount;
+document.getElementById('teamCount').textContent = teamCount;
+document.getElementById('personalCount').textContent = personalCount;
+
+// About 개인 프로젝트 개수 자동 반영
+document.getElementById('personalProjectCount').textContent =
+  String(personalCount).padStart(2, '0');
+
+// 탭 클릭 이벤트
+projectTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const filter = tab.dataset.filter;
+
+    // 선택한 탭 활성화
+    projectTabs.forEach(item => {
+      const isActive = item === tab;
+
+      item.classList.toggle('is-active', isActive);
+      item.setAttribute('aria-pressed', String(isActive));
+    });
+
+    // 프로젝트 필터링
+    projects.forEach(project => {
+      const category = project.dataset.category;
+
+      const show =
+        filter === 'all' || filter === category;
+
+      project.hidden = !show;
+    });
+  });
+});
