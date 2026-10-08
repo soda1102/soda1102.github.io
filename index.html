@@ -222,7 +222,13 @@
       </p>
 
       <ul class="project-stack">
-        <li>HTML/CSS/JS</li><li>Bootstrap</li><li>Flask</li><li>YOLOv11</li><li>PyTorch</li><li>TiDB(MySQL)</li><li>Cloudinary</li>
+        <li>HTML/CSS/JS</li>
+        <li>Bootstrap</li>
+        <li>Flask</li>
+        <li>YOLOv11</li>
+        <li>PyTorch</li>
+        <li>TiDB(MySQL)</li>
+        <li>Cloudinary</li>
       </ul>
     </article>
 
@@ -248,7 +254,8 @@
       </div>
 
       <figure class="project-shot">
-        <img src="images/weather-ai-dashboard.jpg" alt="Weather-AI 관리자 대시보드 — AI 분석 보고서와 CCTV 알림 화면" loading="lazy">
+        <img src="images/weather-ai-dashboard.jpg" 
+          alt="Weather-AI 관리자 대시보드 — AI 분석 보고서와 CCTV 알림 화면" loading="lazy">
         <figcaption>관리자 대시보드 · 실시간 위험 탐지 알림 화면</figcaption>
       </figure>
 
@@ -298,7 +305,8 @@
         </div>
       </div>
 
-      <p class="project-outcome">→ AI 탐지 결과를 관리자 화면에서 실시간으로 확인할 수 있도록 구현했습니다.</p>
+      <p class="project-outcome">
+        → AI 탐지 결과를 관리자 화면에서 실시간으로 확인할 수 있도록 구현했습니다.</p>
 
       <p class="project-role">
         <span class="role-label">담당</span>
@@ -332,11 +340,136 @@
       </div>
 
       <ul class="project-stack">
-        <li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Flask</li><li>FastAPI</li><li>YOLO11</li><li>Gemma LLM</li><li>Supabase</li>
+        <li>Next.js</li>
+        <li>TypeScript</li>
+        <li>Tailwind CSS</li>
+        <li>Flask</li>
+        <li>FastAPI</li>
+        <li>YOLO11</li>
+        <li>Gemma LLM</li>
+        <li>Supabase</li>
       </ul>
     </article>
   </section>
 
+  <!-- Project 03(개인) -->
+  <article class="project">
+        <span class="project-index">03</span>
+        <div class="project-head">
+          <div>
+            <p class="project-type">PERSONAL PROJECT</p>
+            <h3 class="project-title">트레디 <span class="project-title-en">— TRIP READY</span></h3>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/soda1102/trip_ready" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://soda1102.github.io/trip_ready/" target="_blank" rel="noopener">Live Demo ↗</a>
+          </div>
+        </div>
+  
+        <div class="project-meta">
+          <div class="meta-item"><span class="meta-key">Role</span><span class="meta-val">기획 · 디자인 · 프론트엔드 개발</span></div>
+          <div class="meta-item"><span class="meta-key">Type</span><span class="meta-val">개인프로젝트 (1인)</span></div>
+          <div class="meta-item"><span class="meta-key">Completed</span><span class="meta-val">2026.10.08.</span></div>
+        </div>
+  
+        <figure class="project-shot">
+          <img src="images/trip-ready-dashboard.jpg" 
+            alt="트레디 여행 준비물 체크리스트 메인화면" loading="lazy">
+          <figcaption>여행 준비물 체크리스트 · 준비 현황 확인 화면</figcaption>
+        </figure>
+  
+        <p class="project-desc">
+          여행 전 필요한 준비물을 자주 빠트리는 사람들을 위해 만든
+          여행 준비물 체크리스트 웹사이트입니다.
+          여행 유형과 출발일, 성별에 따라 기본 준비물을 추천하고,
+          사용자가 별도로 사용하는 준비물은 직접 추가하거나 삭제할 수 있습니다.
+          체크한 항목은 실시간 진행률로 반영되어 확인할 수 있으며,
+          LocalStorage를 활용해 새로고침 후에도 목록이 유지되도록 구현했습니다.
+        </p>
+  
+        <div class="built-block">
+          <p class="built-label">WHAT I BUILT</p>
+          
+          <div class="built-items">
+            <div class="built-item">
+              <p class="built-item-title">여행 준비물 추천</p>
+              <ul>
+                <li>국내 · 해외 여행 유형에 따른 기본 준비물 제공</li>
+                <li>성별 및 여행 시기에 맞는 준비물 추천</li>
+                <li>카테고리별 준비물 목록 구성</li>
+              </ul>
+            </div>
+            
+            <div class="built-item">
+              <p class="built-item-title">Checklist Management</p>
+              <ul>
+                <li>준비물 항목 체크 및 완료 상태 확인</li>
+                <li>사용자 맞춤 준비물 추가 · 삭제 기능 구현</li>
+                <li>완료 항목 수와 전체 준비 진행률 표시</li>
+              </ul>
+            </div>
+            
+            <div class="built-item">
+              <p class="built-item-title">Responsive UI</p>
+              <ul>
+                <li>Next.js + TypeScript 기반 화면 개발</li>
+                <li>Tailwind CSS를 활용한 UI 디자인</li>
+                <li>준비물 확인에 집중할 수 있는 화면 구성</li>
+              </ul>
+            </div>
+            
+            <div class="built-item">
+              <p class="built-item-title">Data Persistence</p>
+              <ul>
+                <li>LocalStroage를 활용한 데이터 저장</li>
+                <li>새로고침 후에도 체크리스트 상태 유지</li>
+                <li>별도의 로그인 없이 준비물 관리 가능</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  
+        <p class="project-outcome">
+          → 여행에 필요한 준비물을 한 곳에서 관리하고,
+            준비 진행 상황을 쉽게 확인할 수 있도록 구현했습니다.</p>
+  
+        <p class="project-role">
+          <span class="role-label">담당</span>
+          개인 프로젝트로 기획 · UI 디자인 · 프론트엔드 개발 및 배포 진행
+        </p>
+  
+        <div class="arch-block">
+          <p class="built-label">ARCHITECTURE</p>
+          <div class="arch-diagram">
+            <span class="arch-node">Browser</span>
+            <span class="arch-arrow">↓</span>
+            <span class="arch-node arch-mine">Next.js + TypeScript</span>
+            <span class="arch-arrow">↓</span>
+            <span class="arch-node">LocalStorage</span>
+            </span>
+          </div>
+          
+          <div class="arch-legend">
+            <span class="legend-dot legend-mine"></span>개인 프로젝트 · 전체 프론트엔드 구현
+          </div>
+          
+          <p class="arch-caption">
+            별도의 백엔드 서버 없이 브라우저의 LocalStorage를 활용해
+            체크리스트 데이터를 저장하고 관리하도록 구현했습니다.
+          </p>
+        </div>
+  
+        <ul class="project-stack">
+          <li>Next.js</li>
+          <li>TypeScript</li>
+          <li>Tailwind CSS</li>
+          <li>LocalStorage</li>
+          <li>Git</li>
+          <li>GitHub Pages</li>
+        </ul>
+      </article>
+    </section>
+  
   <!-- ===== PROBLEM SOLVING ===== -->
   <section id="solving" class="section">
     <p class="section-num">03</p>
