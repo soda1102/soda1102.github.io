@@ -149,6 +149,8 @@ document.getElementById('personalCount').textContent = personalCount;
 document.getElementById('personalProjectCount').textContent =
   String(personalCount).padStart(2, '0');
 
+document.getElementById('heroPersonalCount').textContent = personalCount;
+
 // 탭 클릭 이벤트
 projectTabs.forEach(tab => {
   tab.addEventListener('click', () => {
