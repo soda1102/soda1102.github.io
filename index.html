@@ -128,22 +128,35 @@
           두 팀 프로젝트에서 <strong>프론트엔드 개발을 주 역할</strong>로 담당했으며,
           풀스택 교육과 프로젝트를 통해 <strong>백엔드 · DB · AI 영역까지 함께 경험</strong>했습니다.
         </p>
+        
         <p class="about-sub">
-          미니 프로젝트에서는 게시판 기능을 프론트엔드부터 백엔드(Flask)까지 직접 구현하고
-          AI 데이터셋 작업에도 참여했고, 파이널 프로젝트에서는 Next.js 기반 관리자 대시보드
-          화면 전체를 만들며 백엔드 API와 연결되는 구조를 설계했습니다. 결국 목표는 하나,
-          <em>사용하는 사람에게 실제로 도움이 되는 서비스</em>를 만드는 것입니다.
+          미니 프로젝트에서는 게시판 기능을 프론트엔드부터
+          백엔드(Flask)까지 직접 구현하고 AI 데이터셋 작업에도
+          참여했습니다. 파이널 프로젝트에서는 Next.js 기반
+          관리자 대시보드 전체 화면과 AI 관제센터 관련 백엔드
+          기능을 구현하며 서비스의 전체 흐름을 경험했습니다.
         </p>
+        
+        <p class="about-sub">
+          최근에는 개인 프로젝트로 여행 준비물 체크리스트
+          웹사이트를 기획부터 디자인, 개발, 배포까지 직접
+          진행했습니다. 앞으로도 다양한 개인 프로젝트를
+          통해 경험을 쌓고, 사용자가 편리하게 이용할 수 있는
+          서비스를 만들고 싶습니다.
+        </p>
+        
       </div>
       <div class="about-side">
         <div class="side-card">
           <p class="side-num">02</p>
           <p class="side-label">완성한 팀 프로젝트</p>
         </div>
+
         <div class="side-card">
-          <p class="side-num">2</p>
-          <p class="side-label">백엔드 기술 경험<br>(Flask · FastAPI)</p>
+          <p class="side-num" id="personalProjectCount">01</p>
+          <p class="side-label">개인 프로젝트</p>
         </div>
+        
         <div class="side-card side-card-accent">
           <p class="side-quote">"화면 너머의<br>사용자를 먼저 생각합니다"</p>
         </div>
@@ -155,9 +168,37 @@
   <section id="projects" class="section">
     <p class="section-num">02</p>
     <h2 class="section-title">projects</h2>
+    
+    <!-- 프로젝트 필터 탭 -->
+    <div class="project-tabs" role="group" aria-label="프로젝트 유형 필터">
+      <button
+        type="button"
+        class="project-tab is-active"
+        data-filter="all"
+        aria-pressed="true">
+        전체 <span class="tab-count" id="allCount">3</span>
+      </button>
+    
+      <button
+        type="button"
+        class="project-tab"
+        data-filter="team"
+        aria-pressed="false">
+        팀 프로젝트 <span class="tab-count" id="teamCount">2</span>
+      </button>
+    
+      <button
+        type="button"
+        class="project-tab"
+        data-filter="personal"
+        aria-pressed="false">
+        개인 프로젝트 <span class="tab-count" id="personalCount">1</span>
+      </button>
+    </div>
+
 
     <!-- Project 01(미니) -->
-    <article class="project">
+    <article class="project" data-category="team">
       <span class="project-index">01</span>
       <div class="project-head">
         <div>
@@ -233,7 +274,7 @@
     </article>
 
     <!-- Project 02(파이널) -->
-    <article class="project">
+    <article class="project" data-category="team">
       <span class="project-index">02</span>
       <div class="project-head">
         <div>
@@ -352,7 +393,7 @@
     </article>
 
   <!-- Project 03(개인) -->
-  <article class="project">
+  <article class="project" data-category="personal">
         <span class="project-index">03</span>
         <div class="project-head">
           <div>
