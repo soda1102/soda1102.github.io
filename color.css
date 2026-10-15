@@ -445,3 +445,40 @@ body.color-page {
     transition-duration: .01ms !important;
   }
 }
+
+/* 메인 타이틀 줄바꿈 및 정렬 */
+
+.landing-content {
+  min-width: 0;
+}
+
+.landing-title {
+  font-size: clamp(26px, 3vw, 44px);
+  line-height: 1.45;
+  letter-spacing: -1.5px;
+  word-break: keep-all;
+}
+
+.landing-title .title-line {
+  display: block;
+  color: #293B2E;
+}
+
+.landing-title .title-accent {
+  color: #64876B;
+}
+
+/* 소개 문구 정렬 */
+.landing-description,
+.landing-sub {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 모바일 화면 */
+@media (max-width: 800px) {
+  .landing-title {
+    font-size: clamp(25px, 5vw, 36px);
+    letter-spacing: -1px;
+  }
+}
