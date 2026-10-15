@@ -739,3 +739,43 @@ body.color-page {
     letter-spacing: -1px;
   }
 }
+
+/* ---------------------------------------------- */
+
+/* =====================================
+   HOME RABBIT CHARACTER
+   하얀 말풍선 위 토끼 캐릭터
+===================================== */
+
+.color-page .landing-visual .floating-note {
+  z-index: 2;
+  overflow: visible;
+}
+
+/* 토끼 캐릭터 */
+.color-page .floating-rabbit {
+  position: absolute;
+
+  width: 105px;
+  height: auto;
+
+  right: 18px;
+  bottom: calc(100% - 5px);
+
+  object-fit: contain;
+  pointer-events: none;
+
+  filter: drop-shadow(
+    0 5px 8px rgba(40, 66, 45, 0.08)
+  );
+}
+
+/* 모바일 반응형 */
+@media (max-width: 480px) {
+  .color-page .floating-rabbit {
+    width: 75px;
+    right: 10px;
+    bottom: calc(100% - 4px);
+  }
+}
+
