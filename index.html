@@ -1,625 +1,149 @@
 <!-- 메인 -->
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>김소현 — Frontend Developer</title>
-<meta name="description" content="사용자에게 도움이 되는 서비스를 만드는 프론트엔드 개발자 김소현의 포트폴리오">
-<script>
-(function () {
-  try {
-    var theme = localStorage.getItem('portfolio-theme') || 'periwinkle';
-    var mode = localStorage.getItem('portfolio-mode') || 'light';
-    document.documentElement.setAttribute('data-theme', theme);
-    document.documentElement.setAttribute('data-mode', mode);
-  } catch (e) {}
-})();
-</script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="프론트엔드 개발자 김소현의 포트폴리오">
+
+  <title>김소현 | Frontend Developer</title>
+
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="color.css">
+
+  <script src="navigation.js" defer></script>
 </head>
-<body>
 
-<div class="grid-bg" aria-hidden="true"></div>
+<body class="color-page">
 
-<!-- 좌측 파일 탐색기 스타일 내비게이션 -->
-<nav class="explorer" id="explorer">
-  <div class="explorer-head">
-    <span class="explorer-dot"></span>
-    <span class="explorer-title">kimsohyun</span>
-  </div>
-  <ul class="explorer-list" id="explorerList">
-    <div class="explorer-highlight" id="explorerHighlight" aria-hidden="true"></div>
-    <li><a href="#intro" class="explorer-link is-active" data-target="intro"><span class="file-ext">~/</span>intro.md</a></li>
-    <li><a href="#about" class="explorer-link" data-target="about"><span class="file-ext">~/</span>about.md</a></li>
-    <li><a href="#projects" class="explorer-link" data-target="projects"><span class="file-ext">~/</span>projects</a></li>
-    <li><a href="#solving" class="explorer-link" data-target="solving"><span class="file-ext">~/</span>troubleshoot.md</a></li>
-    <li><a href="#skills" class="explorer-link" data-target="skills"><span class="file-ext">~/</span>skills.json</a></li>
-    <li><a href="#contact" class="explorer-link" data-target="contact"><span class="file-ext">~/</span>contact.md</a></li>
-  </ul>
-  <div class="explorer-foot">
-    <span class="status-dot"></span> build: portfolio@1.0
-  </div>
+  <!-- HEADER -->
+  <header class="site-header">
 
-  <div class="theme-switcher theme-switcher--inline" role="group" aria-label="테마 색상 선택">
-    <button class="theme-dot" data-theme="periwinkle" style="--dot-color:#6E7FA8" aria-label="페리윙클 테마"></button>
-    <button class="theme-dot" data-theme="green" style="--dot-color:#7C9A46" aria-label="연두색 테마"></button>
-    <button class="theme-dot" data-theme="yellow" style="--dot-color:#C89A3E" aria-label="노란색 테마"></button>
-    <button class="theme-dot" data-theme="orange" style="--dot-color:#CC7A3E" aria-label="주황색 테마"></button>
-    <span class="theme-switcher-divider" aria-hidden="true"></span>
-    <button class="mode-toggle" aria-label="다크모드 전환">
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
+    <a href="index.html" class="brand">
+      SOHYUN<span>.</span>DEV
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="메뉴 열기"
+      aria-expanded="false"
+      aria-controls="site-nav">
+      ☰
     </button>
-  </div>
-</nav>
-  
-</nav>
 
-<!-- 모바일 상단 내비게이션 -->
-<nav class="mobile-nav" id="mobileNav">
-  <a href="#intro" class="is-active" data-target="intro">intro</a>
-  <a href="#about" data-target="about">about</a>
-  <a href="#projects" data-target="projects">projects</a>
-  <a href="#solving" data-target="solving">troubleshoot</a>
-  <a href="#skills" data-target="skills">skills</a>
-  <a href="#contact" data-target="contact">contact</a>
-</nav>
+    <nav id="site-nav"
+         class="site-nav"
+         aria-label="주 메뉴">
 
-<main>
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT ME</a>
+      <a href="projects.html">PROJECTS</a>
+      <a href="skills.html">SKILLS</a>
+      <a href="contact.html">CONTACT</a>
 
-  <!-- ===== INTRO / HERO ===== -->
-  <section id="intro" class="section hero">
-    <div class="hero-grid">
-      <div class="hero-text">
-        <p class="eyebrow">PORTFOLIO — FRONTEND DEVELOPER</p>
-        <h1 class="hero-name">김소현<span class="cursor" aria-hidden="true">_</span></h1>
-        <p class="hero-role">Frontend Developer <span class="hero-role-sub">/ Full-Stack 경험</span></p>
-        <p class="hero-statement">“사용자에게 도움이 되는 서비스를 만드는<br class="br-mobile"> 개발자가 되고 싶습니다.”</p>
-        <div class="hero-tags">
-          <span class="tag">Next.js</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">React</span>
-          <span class="tag">Tailwind CSS</span>
-        </div>
-        <a href="#projects" class="scroll-cue" data-target="projects">
-          <span>프로젝트 보기</span>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5L7 10L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
+    </nav>
+  </header>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="code-card">
-          <div class="code-card-head">
-            <span class="dot dot-a"></span><span class="dot dot-b"></span><span class="dot dot-c"></span>
-            <span class="code-card-name">profile.ts</span>
-          </div>
-          <pre class="code-card-body"><span class="c-kw">const</span> <span class="c-var">developer</span> = {
-  <span class="c-key">name</span>: <span class="c-str">"김소현"</span>,
-  <span class="c-key">role</span>: <span class="c-str">"Frontend Developer"</span>,
-  <span class="c-key">stack</span>: [<span class="c-str">"Next.js"</span>, <span class="c-str">"TypeScript"</span>],
-  <span class="c-key">alsoExperienced</span>: [<span class="c-str">"Flask"</span>, <span class="c-str">"AI Modeling"</span>],
-  <span class="c-key">teamProjects</span>: <span class="c-num">2</span>,
-  <span class="c-key">personalProjects</span>: <span class="c-num" id="heroPersonalCount">1</span>,
-  <span class="c-key">focus</span>: <span class="c-str">"user-first"</span>,
-}<span class="cursor2">|</span></pre>
-        </div>
-        <div class="stat-chip stat-chip-a">
-          <span class="stat-num">2</span>
-          <span class="stat-label">TEAM PROJECTS</span>
-        </div>
-        <div class="stat-chip stat-chip-b">
-          <span class="stat-num">FE</span>
-          <span class="stat-label">Main Role · AI/BE 경험</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- MAIN -->
+  <main class="color-main">
 
-  <!-- ===== ABOUT ===== -->
-  <section id="about" class="section">
-    <p class="section-num">01</p>
-    <h2 class="section-title">about.md</h2>
-    <div class="about-grid">
-      <div class="about-copy">
-        <p class="about-lead">
-          두 팀 프로젝트에서 <strong>프론트엔드 개발을 주 역할</strong>로 담당했으며,
-          풀스택 교육과 프로젝트를 통해 <strong>백엔드 · DB · AI 영역까지 함께 경험</strong>했습니다.
+    <section class="landing">
+
+      <div class="landing-content">
+
+        <p class="landing-eyebrow">
+          HELLO, I'M SOHYUN.
         </p>
-        
-        <p class="about-sub">
-          미니 프로젝트에서는 게시판 기능을 프론트엔드부터
-          백엔드(Flask)까지 직접 구현하고 AI 데이터셋 작업에도
-          참여했습니다. 파이널 프로젝트에서는 Next.js 기반
-          관리자 대시보드 전체 화면과 AI 관제센터 관련 백엔드
-          기능을 구현하며 서비스의 전체 흐름을 경험했습니다.
+
+        <h1>
+          사용자에게 편리함을 제공하기 위해<br>
+          기록하고 또 고민하며
+          <span>구현하는 개발자.</span>
+        </h1>
+
+        <p class="landing-description">
+          사용자에게 보여지는 화면부터
+          서비스의 동작까지 이해하는
+          프론트엔드 개발자 김소현입니다.
         </p>
-        
-        <p class="about-sub">
-          최근에는 개인 프로젝트로 여행 준비물 체크리스트
-          웹사이트를 기획부터 디자인, 개발, 배포까지 직접
-          진행했습니다. 앞으로도 다양한 개인 프로젝트를
-          통해 경험을 쌓고, 사용자가 편리하게 이용할 수 있는
-          서비스를 만들고 싶습니다.
+
+        <p class="landing-sub">
+          사용자의 입장에서 생각하고,
+          더 편리한 서비스를 만들기 위해
+          끊임없이 배우고 있습니다.
         </p>
-        
-      </div>
-      <div class="about-side">
-        <div class="side-card">
-          <p class="side-num">02</p>
-          <p class="side-label">완성한 팀 프로젝트</p>
+
+        <div class="landing-buttons">
+
+          <a href="projects.html"
+             class="btn-primary">
+            View Projects ↗
+          </a>
+
+          <a href="about.html"
+             class="btn-outline">
+            About Me →
+          </a>
+
         </div>
 
-        <div class="side-card">
-          <p class="side-num" id="personalProjectCount">01</p>
-          <p class="side-label">개인 프로젝트</p>
+        <div class="landing-tags">
+          <span>React</span>
+          <span>Next.js</span>
+          <span>TypeScript</span>
+          <span>JavaScript</span>
+          <span>UI/UX</span>
         </div>
-        
-        <div class="side-card side-card-accent">
-          <p class="side-quote">"화면 너머의<br>사용자를 먼저 생각합니다"</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects" class="section">
-    <p class="section-num">02</p>
-    <h2 class="section-title">projects</h2>
-    
-    <!-- 프로젝트 필터 탭 -->
-    <div class="project-tabs" role="group" aria-label="프로젝트 유형 필터">
-      <button
-        type="button"
-        class="project-tab is-active"
-        data-filter="all"
-        aria-pressed="true">
-        전체 <span class="tab-count" id="allCount">3</span>
-      </button>
-    
-      <button
-        type="button"
-        class="project-tab"
-        data-filter="team"
-        aria-pressed="false">
-        팀 프로젝트 <span class="tab-count" id="teamCount">2</span>
-      </button>
-    
-      <button
-        type="button"
-        class="project-tab"
-        data-filter="personal"
-        aria-pressed="false">
-        개인 프로젝트 <span class="tab-count" id="personalCount">1</span>
-      </button>
-    </div>
-
-
-    <!-- Project 01(미니) -->
-    <article class="project" data-category="team">
-      <span class="project-index">01</span>
-      <div class="project-head">
-        <div>
-          <p class="project-type">MINI PROJECT · TEAM (5인)</p>
-          <h3 class="project-title">도(道)서관 <span class="project-title-en">— The Road Library</span></h3>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/MBCAcademy3-3Team/the-road-library" target="_blank" rel="noopener">GitHub ↗</a>
-          <a href="http://52.78.98.112/" target="_blank" rel="noopener">Live Demo ↗</a>
-        </div>
       </div>
 
-      <div class="project-meta">
-        <div class="meta-item"><span class="meta-key">Role</span><span class="meta-val">Frontend · Backend · AI Modeling</span></div>
-        <div class="meta-item"><span class="meta-key">Team</span><span class="meta-val">5명</span></div>
-        <div class="meta-item"><span class="meta-key">Duration</span><span class="meta-val">2026.03.10 ~ 2026.04.07 · 4주</span></div>
+      <!-- 오른쪽 코드 카드 -->
+      <div class="landing-visual">
+
+        <div class="profile-code">
+
+          <div class="profile-code-top">
+            <span class="window-dots">● ● ●</span>
+            <span>developer.ts</span>
+          </div>
+
+          <pre><code>const developer = {
+  name: "김소현",
+  role: "Frontend Developer",
+  focus: "User Experience",
+  mindset: [
+    "Observe",
+    "Think",
+    "Build"
+  ],
+  learning: true
+};</code></pre>
+
+        </div>
+
+        <div class="floating-note">
+          Design meets Development ✳
+        </div>
+
       </div>
 
-      <figure class="project-shot">
-        <img src="images/road-library-home.jpg" alt="도(道)서관 홈페이지 — 도로 위 숨은 위험을 찾아내는 Vision AI 랜딩 화면" loading="lazy">
-        <figcaption>홈페이지 · 도(道)란도란 · 도(道)움말 · 소개 페이지</figcaption>
-      </figure>
-
-      <p class="project-desc">
-        산간 지형이 많은 고속도로에서 반복되는 로드킬과 그로 인한 대형 화물차 사고 위험을
-        줄이기 위한 Vision AI 서비스입니다. YOLOv11로 도로 위 야생동물(멧돼지·너구리·고라니)을
-        실시간으로 탐지해 운전자에게 위험을 미리 알리고, 커뮤니티 게시판으로 운전자들끼리
-        위험 정보를 공유할 수 있도록 설계했습니다.
-      </p>
-
-      <div class="built-block">
-        <p class="built-label">COMMUNITY FEATURES</p>
-        <div class="feature-tags">
-          <span class="feature-tag">댓글</span><span class="feature-tag">대댓글</span><span class="feature-tag">공감</span>
-          <span class="feature-tag">스크랩</span><span class="feature-tag">신고</span><span class="feature-tag">인기글 자동 등록</span>
-          <span class="feature-tag">공지 고정</span>
-        </div>
-        <p class="built-desc">
-          게시판(도란도란)에서 사용자가 콘텐츠를 생성하고 상호작용할 수 있도록 주요 커뮤니티
-          기능을 프론트엔드부터 백엔드(Flask)까지 직접 구현했습니다.
-        </p>
-      </div>
-
-      <div class="built-block">
-        <p class="built-label">BACKEND</p>
-        <div class="built-items built-items-single">
-          <div class="built-item">
-            <ul>
-              <li>Flask 라우트 · 뷰 로직으로 댓글 · 대댓글 · 공감 · 스크랩 · 신고 CRUD API 구현</li>
-              <li>게시글 - 댓글 연관 구조에 맞춘 DB 쿼리 작성 및 데이터 연동</li>
-              <li>조회수 · 좋아요 기준 인기글 자동 등록, 공지 고정 로직 구현</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <p class="project-outcome">→ 게시판 핵심 상호작용 기능을 프론트 - 백엔드 전 구간 구현해 사용자 간 위험 정보 공유 흐름을 완성했습니다.</p>
-
-      <p class="project-extra">
-        그 외 공통 레이아웃 및 메인 페이지 구축, AI 데이터셋 수집·라벨링 및 모델 학습
-        최적화에도 참여했습니다.
-      </p>
-
-      <ul class="project-stack">
-        <li>HTML/CSS/JS</li>
-        <li>Bootstrap</li>
-        <li>Flask</li>
-        <li>YOLOv11</li>
-        <li>PyTorch</li>
-        <li>TiDB(MySQL)</li>
-        <li>Cloudinary</li>
-      </ul>
-    </article>
-
-    <!-- Project 02(파이널) -->
-    <article class="project" data-category="team">
-      <span class="project-index">02</span>
-      <div class="project-head">
-        <div>
-          <p class="project-type">FINAL PROJECT · TEAM (5인)</p>
-          <h3 class="project-title">Weather-AI <span class="project-title-en">— 날씨의 아이</span></h3>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/WeatherAI-Team/weather-ai" target="_blank" rel="noopener">GitHub ↗</a>
-          <a href="https://weather-ai-roan.vercel.app/" target="_blank" rel="noopener">Live Demo ↗</a>
-          <a href="https://weather-ai-roan.vercel.app/admin" target="_blank" rel="noopener" class="project-link-highlight">Admin Demo (No Login) ↗</a>
-        </div>
-      </div>
-
-      <div class="project-meta">
-        <div class="meta-item"><span class="meta-key">Role</span><span class="meta-val">Frontend · Backend (관제센터)</span></div>
-        <div class="meta-item"><span class="meta-key">Team</span><span class="meta-val">5명</span></div>
-        <div class="meta-item"><span class="meta-key">Duration</span><span class="meta-val">2026.05.06 ~ 2026.07.07 · 약 9주</span></div>
-      </div>
-
-      <figure class="project-shot">
-        <img src="images/weather-ai-dashboard.jpg" 
-          alt="Weather-AI 관리자 대시보드 — AI 분석 보고서와 CCTV 알림 화면" loading="lazy">
-        <figcaption>관리자 대시보드 · 실시간 위험 탐지 알림 화면</figcaption>
-      </figure>
-
-      <p class="project-desc">
-        악천후로 인한 관제 사각지대와 대형 화물차 사고 위험을 줄이기 위한 AI 도로 안전
-        플랫폼입니다. 기상청 API와 Gemma LLM으로 악천후 심각도를 판단해 감시를
-        자동으로 켜고 끄고, Keras·YOLO11로 위험 차량을 탐지한 뒤 이중 필터를 거쳐
-        관리자에게 실시간으로 알립니다.
-      </p>
-
-      <div class="built-block">
-        <p class="built-label">WHAT I BUILT</p>
-        <div class="built-items">
-          <div class="built-item">
-            <p class="built-item-title">관리자 대시보드</p>
-            <ul>
-              <li>AI 탐지 결과 및 위험 정보를 확인할 수 있는 관리자 화면 구현</li>
-              <li>API 응답 데이터를 화면 상태에 맞게 렌더링</li>
-              <li>정보 중요도에 따른 UI 계층 구조 설계</li>
-            </ul>
-          </div>
-          <div class="built-item">
-            <p class="built-item-title">Responsive UI</p>
-            <ul>
-              <li>Next.js + TypeScript 기반 화면 구성</li>
-              <li>Tailwind CSS를 이용한 반응형 레이아웃 및 스타일링</li>
-              <li>다양한 화면 크기에서도 대시보드 정보 확인 가능하도록 구성</li>
-            </ul>
-          </div>
-          <div class="built-item">
-            <p class="built-item-title">API Integration</p>
-            <ul>
-              <li>Flask Backend API와 Frontend 연결</li>
-              <li>서버에서 전달받은 데이터를 화면에 렌더링</li>
-              <li>사용자 동작에 따른 데이터 요청 및 상태 처리</li>
-            </ul>
-          </div>
-          <div class="built-item">
-            <p class="built-item-title">Backend Contribution</p>
-            <ul>
-              <li>관제센터(AI관제센터 · 알림이력) 백엔드 로직 처리 구현</li>
-              <li>관련 테이블 DB 설계 및 연동</li>
-              <li>Flask API 응답 필드명과 DB 컬럼명이 달라 데이터가 표시되지 않는 문제를
-                직접 확인·수정하고 프론트와 재연동 검증</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <p class="project-outcome">
-        → AI 탐지 결과를 관리자 화면에서 실시간으로 확인할 수 있도록 구현했습니다.</p>
-
-      <p class="project-role">
-        <span class="role-label">담당</span>
-        Next.js를 활용한 관리자 대시보드 화면 개발 및 UI 구현 · 관제센터(AI관제센터 · 알림 이력)
-        백엔드 및 DB 개발 · 팀원과 협업하여 서비스 구현
-        <span class="role-note">(LLM 분석 모듈은 팀원이 작성한 코드를 연동해 사용)</span>
-      </p>
-
-      <div class="arch-block">
-        <p class="built-label">ARCHITECTURE</p>
-        <div class="arch-diagram">
-          <span class="arch-node">Browser</span>
-          <span class="arch-arrow">↓</span>
-          <span class="arch-node arch-mine">Next.js</span>
-          <span class="arch-arrow">↓ REST API</span>
-          <span class="arch-node">Flask</span>
-          <span class="arch-arrow">↓</span>
-          <span class="arch-split">
-            <span class="arch-node arch-sub">FastAPI (AI)</span>
-            <span class="arch-node arch-sub">Supabase (DB)</span>
-          </span>
-        </div>
-        <div class="arch-legend">
-          <span class="legend-dot legend-mine"></span>나의 개발 영역 (Frontend)
-          <span class="legend-dot legend-team"></span>팀원 개발 영역 (Backend · AI · DB)
-        </div>
-        <p class="arch-caption">
-          Frontend를 담당하면서 Backend·AI Server·DB가 연결되는 전체 서비스 흐름을
-          이해하고 개발했습니다.
-        </p>
-      </div>
-
-      <ul class="project-stack">
-        <li>Next.js</li>
-        <li>TypeScript</li>
-        <li>Tailwind CSS</li>
-        <li>Flask</li>
-        <li>FastAPI</li>
-        <li>YOLO11</li>
-        <li>Gemma LLM</li>
-        <li>Supabase</li>
-      </ul>
-    </article>
-
-  <!-- Project 03(개인) -->
-  <article class="project" data-category="personal">
-        <span class="project-index">03</span>
-        <div class="project-head">
-          <div>
-            <p class="project-type">PERSONAL PROJECT</p>
-            <h3 class="project-title">트레디 <span class="project-title-en">— TRIP READY</span></h3>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/soda1102/trip_ready" target="_blank" rel="noopener">GitHub ↗</a>
-            <a href="https://soda1102.github.io/trip_ready/" target="_blank" rel="noopener">Live Demo ↗</a>
-          </div>
-        </div>
-  
-        <div class="project-meta">
-          <div class="meta-item"><span class="meta-key">Role</span><span class="meta-val">기획 · 디자인 · 프론트엔드 개발</span></div>
-          <div class="meta-item"><span class="meta-key">Type</span><span class="meta-val">개인프로젝트 (1인)</span></div>
-          <div class="meta-item"><span class="meta-key">Completed</span><span class="meta-val">2026.10.08.</span></div>
-        </div>
-  
-        <figure class="project-shot">
-          <img src="./images/trip-ready-dashboard.png" 
-            alt="트레디 여행 준비물 체크리스트 메인화면" loading="lazy">
-          <figcaption>여행 준비물 체크리스트 · 준비 현황 확인 화면</figcaption>
-        </figure>
-  
-        <p class="project-desc">
-          여행 전 필요한 준비물을 자주 빠트리는 사람들을 위해 만든
-          여행 준비물 체크리스트 웹사이트입니다.
-          여행 유형과 출발일, 성별에 따라 기본 준비물을 추천하고,
-          사용자가 별도로 사용하는 준비물은 직접 추가하거나 삭제할 수 있습니다.
-          체크한 항목은 실시간 진행률로 반영되어 확인할 수 있으며,
-          LocalStorage를 활용해 새로고침 후에도 목록이 유지되도록 구현했습니다.
-        </p>
-  
-        <div class="built-block">
-          <p class="built-label">WHAT I BUILT</p>
-          
-          <div class="built-items">
-            <div class="built-item">
-              <p class="built-item-title">여행 준비물 추천</p>
-              <ul>
-                <li>국내 · 해외 여행 유형에 따른 기본 준비물 제공</li>
-                <li>성별 및 여행 시기에 맞는 준비물 추천</li>
-                <li>카테고리별 준비물 목록 구성</li>
-              </ul>
-            </div>
-            
-            <div class="built-item">
-              <p class="built-item-title">Checklist Management</p>
-              <ul>
-                <li>준비물 항목 체크 및 완료 상태 확인</li>
-                <li>사용자 맞춤 준비물 추가 · 삭제 기능 구현</li>
-                <li>완료 항목 수와 전체 준비 진행률 표시</li>
-              </ul>
-            </div>
-            
-            <div class="built-item">
-              <p class="built-item-title">Responsive UI</p>
-              <ul>
-                <li>Next.js + TypeScript 기반 화면 개발</li>
-                <li>Tailwind CSS를 활용한 UI 디자인</li>
-                <li>준비물 확인에 집중할 수 있는 화면 구성</li>
-              </ul>
-            </div>
-            
-            <div class="built-item">
-              <p class="built-item-title">Data Persistence</p>
-              <ul>
-                <li>LocalStorage를 활용한 데이터 저장</li>
-                <li>새로고침 후에도 체크리스트 상태 유지</li>
-                <li>별도의 로그인 없이 준비물 관리 가능</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-  
-        <p class="project-outcome">
-          → 여행에 필요한 준비물을 한 곳에서 관리하고,
-            준비 진행 상황을 쉽게 확인할 수 있도록 구현했습니다.</p>
-  
-        <p class="project-role">
-          <span class="role-label">담당</span>
-          개인 프로젝트로 기획 · UI 디자인 · 프론트엔드 개발 및 배포 진행
-        </p>
-  
-        <div class="arch-block">
-          <p class="built-label">ARCHITECTURE</p>
-          <div class="arch-diagram">
-            <span class="arch-node">Browser</span>
-            <span class="arch-arrow">↓</span>
-            <span class="arch-node arch-mine">Next.js + TypeScript</span>
-            <span class="arch-arrow">↓</span>
-            <span class="arch-node">LocalStorage</span>
-          </div>
-          
-          <div class="arch-legend">
-            <span class="legend-dot legend-mine"></span>개인 프로젝트 · 전체 프론트엔드 구현
-          </div>
-          
-          <p class="arch-caption">
-            별도의 백엔드 서버 없이 브라우저의 LocalStorage를 활용해
-            체크리스트 데이터를 저장하고 관리하도록 구현했습니다.
-          </p>
-        </div>
-  
-        <ul class="project-stack">
-          <li>Next.js</li>
-          <li>TypeScript</li>
-          <li>Tailwind CSS</li>
-          <li>LocalStorage</li>
-          <li>Git</li>
-          <li>GitHub Pages</li>
-        </ul>
-      </article>
     </section>
-  
-  <!-- ===== PROBLEM SOLVING ===== -->
-  <section id="solving" class="section">
-    <p class="section-num">03</p>
-    <h2 class="section-title">troubleshoot.md</h2>
-    <p class="solve-source">MINI PROJECT · 도(道)서관 — AI 데이터셋 작업 중 겪은 문제들</p>
-    <div class="solve-grid">
-      <div class="solve-card">
-        <p class="solve-tag">DATA</p>
-        <h3 class="solve-title">데이터셋 클래스 불균형 문제</h3>
-        <div class="solve-pcs">
-          <p><span class="pcs-key">Problem</span>동물 탐지 모델 학습 중 클래스별 라벨링 수가 크게 어긋난 걸 발견 (예: 산토끼류 3,467개 vs 다른 클래스 500개 내외).</p>
-          <p><span class="pcs-key">Cause</span>과도한 전처리(로보플로 증강) 옵션 사용으로 데이터셋이 비정상적으로 생성됨.</p>
-          <p><span class="pcs-key">Solution</span>클래스를 3종(멧돼지·너구리·고라니)으로 재구성하고 전처리를 걷어낸 뒤 YOLO 자체 증강 옵션으로 재학습해 과대적합을 줄임.</p>
-        </div>
-      </div>
-      <div class="solve-card">
-        <p class="solve-tag">AI MODEL</p>
-        <h3 class="solve-title">옵티마이저 선택 (SGD vs AdamW)</h3>
-        <div class="solve-pcs">
-          <p><span class="pcs-key">Problem</span>YOLO 학습 시 어떤 옵티마이저가 더 안정적인 성능을 내는지 확인이 필요했음.</p>
-          <p><span class="pcs-key">Cause</span>AdamW는 수렴은 빨랐지만 학습 데이터에 과도하게 맞춰지는(과적합) 경향을 보임.</p>
-          <p><span class="pcs-key">Solution</span>100 epoch 기준 SGD와 AdamW를 직접 비교 실험해 일반화 성능이 더 좋은 SGD를 최종 채택 — mAP를 유의미하게 개선.</p>
-        </div>
-      </div>
-      <div class="solve-card">
-        <p class="solve-tag">INFRA</p>
-        <h3 class="solve-title">GPU 학습 환경 트러블슈팅</h3>
-        <div class="solve-pcs">
-          <p><span class="pcs-key">Problem</span>Colab 무료(T4)는 성능 부족, Colab Pro는 16시간 만에 컴퓨팅 단위가 소진되며 학습이 강제 종료됨.</p>
-          <p><span class="pcs-key">Cause</span>무료/사설 GPU 환경의 성능 · 시간 제약으로 장시간 학습이 불가능했음.</p>
-          <p><span class="pcs-key">Solution</span>Vast.ai(RTX 5090)를 거쳐 최종적으로 자체 GPU(RTX 4070Ti)로 전환해 안정적인 학습 환경을 확보.</p>
-        </div>
-      </div>
-    </div>
 
-    <p class="solve-source solve-source-second">FINAL PROJECT · Weather-AI — 프론트엔드 · 백엔드 연동 중 겪은 문제</p>
-    <div class="solve-grid">
-      <div class="solve-card">
-        <p class="solve-tag">DATA SYNC</p>
-        <h3 class="solve-title">DB-백엔드 필드명 불일치로 데이터 미표시</h3>
-        <div class="solve-pcs">
-          <p><span class="pcs-key">Problem</span>관리자 대시보드에서 API를 정상 호출했는데도 일부 데이터가 화면에 표시되지 않음.</p>
-          <p><span class="pcs-key">Cause</span>Flask API 응답의 필드명과 실제 DB 컬럼명이 서로 달라 프론트에서 값을 제대로 매칭하지 못함.</p>
-          <p><span class="pcs-key">Solution</span>백엔드 코드를 직접 확인해 필드명 불일치 구간을 찾아 수정하고 프론트와 정상 연동되는지 재검증함.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
-  <!-- ===== SKILLS ===== -->
-  <section id="skills" class="section">
-    <p class="section-num">04</p>
-    <h2 class="section-title">skills.json</h2>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <p class="skill-key">"frontend"</p>
-        <p class="skill-note">Main Stack</p>
-        <ul class="skill-values">
-          <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind CSS</li><li>Bootstrap</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <p class="skill-key">"backend / db"</p>
-        <p class="skill-note">Course & Project Experience</p>
-        <ul class="skill-values">
-          <li>Python</li><li>Flask</li><li>FastAPI</li><li>MySQL / TiDB</li><li>PostgreSQL / Supabase</li><li>REST API</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <p class="skill-key">"collaboration"</p>
-        <ul class="skill-values">
-          <li>Git / GitHub</li><li>브랜치 전략 수립</li><li>Branch → PR → Merge 협업</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <p class="skill-key">"interested_in"</p>
-        <ul class="skill-values">
-          <li>AI 연동 서비스</li><li>UI/UX 디자인 시스템</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <span>© 2026 Kim Sohyun</span>
+    <span>Designed & Developed with care.</span>
+  </footer>
 
-  <!-- ===== CONTACT ===== -->
-  <section id="contact" class="section contact-section">
-    <p class="section-num">05</p>
-    <h2 class="section-title">contact.md</h2>
-    <p class="contact-lead">편하게 연락 주세요.</p>
-    <div class="contact-links">
-      <a href="https://github.com/soda1102" target="_blank" rel="noopener" class="contact-link">GitHub</a>
-      <a href="mailto:jenny110201@gmail.com" class="contact-link">Email</a>
-    </div>
-    <p class="footer-note">© 2026 Kim Sohyun. Built with care.</p>
-  </section>
-
-</main>
-
-<div class="theme-switcher" id="themeSwitcher" role="group" aria-label="테마 색상 선택">
-  <button class="theme-dot" data-theme="periwinkle" style="--dot-color:#6E7FA8" aria-label="페리윙클 테마"></button>
-  <button class="theme-dot" data-theme="green" style="--dot-color:#7C9A46" aria-label="연두색 테마"></button>
-  <button class="theme-dot" data-theme="yellow" style="--dot-color:#C89A3E" aria-label="노란색 테마"></button>
-  <button class="theme-dot" data-theme="orange" style="--dot-color:#CC7A3E" aria-label="주황색 테마"></button>
-  <span class="theme-switcher-divider" aria-hidden="true"></span>
-  <button class="mode-toggle" id="modeToggle" aria-label="다크모드 전환">
-    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
-  </button>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
