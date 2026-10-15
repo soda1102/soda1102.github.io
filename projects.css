@@ -1,11 +1,12 @@
 /* 프로젝트 탭 레이아웃 */
 
+
 /* =====================================
-   PROJECTS INTERACTIVE LAYOUT
-   Cream & Deep Green
+   PROJECTS PAGE
+   CREAM + DEEP GREEN
 ===================================== */
 
-/* 프로젝트 필터 */
+/* PROJECT FILTER */
 
 .color-page .projects-section .project-tabs {
   display: flex;
@@ -16,19 +17,27 @@
 
 .color-page .projects-section .project-tab {
   padding: 12px 24px;
-  border-radius: 999px;
   border: 1px solid #D5DED1;
+  border-radius: 999px;
+
   background: #FFFEFA;
   color: #47684F;
+
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.color-page .projects-section .project-tab:hover {
+  border-color: #47684F;
 }
 
 .color-page .projects-section .project-tab.is-active {
   background: #355640;
   border-color: #355640;
-  color: white;
+  color: #FFFFFF;
 }
 
 .project-guide {
@@ -38,13 +47,14 @@
 }
 
 /* =====================================
-   GRID
+   PROJECT GRID
 ===================================== */
 
 .color-page .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
+
   gap: 24px;
   width: 100%;
   padding-bottom: 100px;
@@ -58,6 +68,7 @@
   display: block;
   width: 100%;
   min-width: 0;
+
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -66,28 +77,32 @@
   border: 1px solid #DDE2D6;
   border-radius: 18px;
 
-  box-shadow: 0 4px 18px rgba(40, 66, 45, .04);
+  box-shadow: 0 4px 18px rgba(40, 66, 45, 0.04);
 
   transition:
-    box-shadow .3s ease,
-    border-color .3s ease,
-    transform .3s ease;
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .color-page .portfolio-card.project:hover {
   border-color: #8DAA90;
 }
 
-.color-page .portfolio-card.project[hidden] {
-  display: none !important;
-}
-
-/* 선택된 카드는 가로 2칸 차지 */
+/* 선택한 프로젝트가 가로 두 칸 차지 */
 
 .color-page .portfolio-card.project.is-expanded {
   grid-column: 1 / -1;
   border-color: #9BB39D;
-  box-shadow: 0 16px 40px rgba(40, 66, 45, .09);
+
+  box-shadow: 0 16px 40px
+              rgba(40, 66, 45, 0.09);
+}
+
+/* 프로젝트 필터링 */
+
+.color-page .portfolio-card.project[hidden] {
+  display: none !important;
 }
 
 /* =====================================
@@ -97,9 +112,11 @@
 .color-page .project-open {
   display: block;
   width: 100%;
+
   padding: 0;
-  border: 0;
+  border: none;
   background: transparent;
+
   color: inherit;
   text-align: left;
   font: inherit;
@@ -113,10 +130,10 @@
 }
 
 /* =====================================
-   IMAGE
+   PROJECT IMAGE
 ===================================== */
 
-/* 작은 카드 이미지 */
+/* 기본 카드 이미지 */
 
 .color-page .portfolio-image {
   display: flex;
@@ -126,13 +143,14 @@
   width: 100%;
   height: 220px;
   padding: 15px;
-  overflow: hidden;
 
+  overflow: hidden;
   background: #F8F9F5;
 }
 
 .color-page .portfolio-image img {
   display: block;
+
   width: 100%;
   height: 100%;
   max-width: 100%;
@@ -143,21 +161,29 @@
 
   margin: auto;
   transform: none;
+  transition: none;
 }
 
-/* 마우스를 올려도 확대되지 않음 */
+/* 이미지 확대 효과 제거 */
 
 .color-page .portfolio-card:hover .portfolio-image img {
   transform: none;
 }
 
-/* 펼쳐진 프로젝트는 위쪽 소개 영역을
-   이미지 + 텍스트 2열로 표시 */
+/* =====================================
+   EXPANDED CARD
+===================================== */
+
+/* 프로젝트를 펼치면 이미지와 설명을
+   좌우 2열로 배치 */
 
 .color-page .portfolio-card.is-expanded .project-open {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr)
-                         minmax(0, 1fr);
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(0, 1fr);
+
   align-items: center;
   gap: 28px;
   padding: 28px;
@@ -174,7 +200,7 @@
 }
 
 /* =====================================
-   CARD TEXT
+   PROJECT TEXT
 ===================================== */
 
 .color-page .portfolio-info {
@@ -200,10 +226,14 @@
 .color-page .portfolio-stack span {
   padding: 6px 11px;
   border-radius: 6px;
+
   background: #EAF0E5;
   color: #52725A;
+
   font-size: 11px;
 }
+
+/* VIEW DETAIL */
 
 .color-page .portfolio-more {
   margin-top: 22px;
@@ -216,12 +246,12 @@
 }
 
 /* =====================================
-   EXPANDED DETAILS
+   PROJECT DETAIL
 ===================================== */
 
 .project-detail {
   padding: 0 42px 40px;
-  animation: detailAppear .35s ease;
+  animation: detailAppear 0.35s ease;
 }
 
 .project-detail[hidden] {
@@ -240,7 +270,9 @@
   }
 }
 
-/* DETAIL HEADING */
+/* =====================================
+   DETAIL HEADING
+===================================== */
 
 .detail-heading {
   display: flex;
@@ -254,6 +286,7 @@
 
 .detail-eyebrow {
   margin: 0 0 10px;
+
   color: #7D947F;
   font-size: 11px;
   font-weight: 700;
@@ -262,6 +295,7 @@
 
 .detail-heading h3 {
   margin: 0 0 5px;
+
   color: #293B2E;
   font-size: 30px;
 }
@@ -272,20 +306,27 @@
 
 .project-close {
   flex-shrink: 0;
+
   padding: 10px 16px;
+
   border: 1px solid #CEDCCC;
   border-radius: 8px;
+
   background: #F5F8F1;
   color: #355640;
+
   font-size: 13px;
   cursor: pointer;
 }
 
-/* METADATA */
+/* =====================================
+   PROJECT METADATA
+===================================== */
 
 .detail-meta {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+
   gap: 15px;
   margin-bottom: 32px;
 }
@@ -311,7 +352,9 @@
   font-weight: 600;
 }
 
-/* SECTION */
+/* =====================================
+   PROJECT DETAIL SECTION
+===================================== */
 
 .detail-section {
   padding: 28px 0;
@@ -320,6 +363,7 @@
 
 .detail-section h4 {
   margin: 0 0 20px;
+
   color: #355640;
   font-size: 19px;
   font-weight: 800;
@@ -336,7 +380,9 @@
   margin-bottom: 18px;
 }
 
-/* FEATURE GRID */
+/* =====================================
+   FEATURE GRID
+===================================== */
 
 .detail-feature-grid {
   display: grid;
@@ -346,6 +392,7 @@
 
 .detail-feature {
   padding: 22px;
+
   background: #F6F8F3;
   border: 1px solid #E1E9DF;
   border-radius: 12px;
@@ -365,12 +412,15 @@
 
 .detail-feature li {
   margin: 8px 0;
+
   color: #647064;
   font-size: 13px;
   line-height: 1.7;
 }
 
-/* DETAIL TECH TAGS */
+/* =====================================
+   DETAIL TECH STACK
+===================================== */
 
 .detail-tags {
   display: flex;
@@ -380,8 +430,10 @@
 
 .detail-tags span {
   padding: 9px 13px;
+
   background: #EAF0E5;
   color: #466A4D;
+
   border-radius: 7px;
   font-size: 12px;
   font-weight: 600;
@@ -397,17 +449,21 @@
 
 .trouble-item {
   margin: 12px 0;
+
   border: 1px solid #D9E5D6;
   border-radius: 10px;
+
   background: #F9FBF7;
   overflow: hidden;
 }
 
 .trouble-item summary {
   padding: 18px 20px;
+
   color: #355640;
   font-size: 14px;
   font-weight: 700;
+
   cursor: pointer;
 }
 
@@ -421,6 +477,7 @@
 
 .trouble-body p {
   margin: 10px 0;
+
   color: #596B5C;
   font-size: 13px;
   line-height: 1.9;
@@ -430,17 +487,19 @@
   display: inline-block;
   min-width: 73px;
   margin-right: 9px;
+
   color: #355640;
 }
 
 /* =====================================
-   LINKS
+   PROJECT LINKS
 ===================================== */
 
 .detail-links {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+
   padding-top: 28px;
   border-top: 1px solid #E1E7DC;
 }
@@ -448,6 +507,7 @@
 .detail-links a {
   display: inline-flex;
   align-items: center;
+
   padding: 11px 18px;
 
   border: 1px solid #B9CEB9;
@@ -463,7 +523,7 @@
 }
 
 /* =====================================
-   RESPONSIVE
+   RESPONSIVE - TABLET
 ===================================== */
 
 @media (max-width: 800px) {
@@ -500,6 +560,10 @@
   }
 }
 
+/* =====================================
+   RESPONSIVE - MOBILE
+===================================== */
+
 @media (max-width: 480px) {
 
   .color-page .portfolio-image {
@@ -534,6 +598,10 @@
     padding: 12px 15px;
   }
 }
+
+/* =====================================
+   ACCESSIBILITY
+===================================== */
 
 @media (prefers-reduced-motion: reduce) {
   .project-detail {
