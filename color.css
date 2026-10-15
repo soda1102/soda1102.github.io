@@ -235,14 +235,15 @@ body.color-page {
   align-items: center;
 }
 
-.profile-code {
+.color-page .profile-code {
   width: 100%;
-  max-width: 350px;
+  max-width: 480px;
+
   overflow: hidden;
   background: #263C2E;
   border-radius: 16px;
-  transform: rotate(0deg);   /* 기울기 */
-  box-shadow: 0 18px 40px rgba(40, 66, 45, .12);
+
+  box-shadow: 0 18px 40px rgba(40, 66, 45, 0.12);
 }
 
 .profile-code-top {
