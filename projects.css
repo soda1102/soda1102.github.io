@@ -57,13 +57,13 @@
 }
 
 .projects-description {
+  width: 100%;
   max-width: 760px;
-
   color: #4B5F52;
   font-size: 15px;
   font-weight: 500;
   line-height: 1.9;
-
+  white-space: nowrap;
   word-break: keep-all;
 }
 
@@ -232,6 +232,12 @@
    PROJECT TEXT
 ===================================== */
 
+.color-page .portfolio-subtitle {
+  color: #536758;
+  font-size: 14px;
+  font-weight: 500;
+}
+
 .color-page .portfolio-info {
   padding: 25px;
 }
@@ -243,7 +249,11 @@
 
 .color-page .portfolio-desc {
   min-height: 0;
-  line-height: 1.8;
+  color: #4B5F52;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.85;
+  word-break: keep-all;
 }
 
 .color-page .portfolio-stack {
@@ -337,7 +347,9 @@
 }
 
 .detail-heading p {
-  color: #788879;
+  color: #536758;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .project-close {
@@ -406,8 +418,9 @@
 }
 
 .detail-section > p {
-  color: #647064;
-  font-size: 14px;
+  color: #4B5F52;
+  font-size: 15px;
+  font-weight: 500;
   line-height: 1.9;
   word-break: keep-all;
 }
@@ -448,10 +461,10 @@
 
 .detail-feature li {
   margin: 8px 0;
-
-  color: #647064;
-  font-size: 13px;
-  line-height: 1.7;
+  color: #4B5F52;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.8;
 }
 
 /* =====================================
@@ -481,6 +494,9 @@
 
 .detail-help {
   margin-bottom: 17px;
+  color: #536758;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .trouble-item {
@@ -513,9 +529,9 @@
 
 .trouble-body p {
   margin: 10px 0;
-
-  color: #596B5C;
-  font-size: 13px;
+  color: #4B5F52;
+  font-size: 14px;
+  font-weight: 500;
   line-height: 1.9;
 }
 
@@ -645,70 +661,21 @@
   }
 }
 
-
 /* =====================================
-   PROJECTS TEXT READABILITY
-   설명 글씨 가독성 개선
+   RESPONSIVE TEXT
+   PC: one line; smaller screens: wrap
 ===================================== */
 
-/* 프로젝트 카드 설명 */
-.color-page .portfolio-desc {
-  min-height: 0;
-  color: #4B5F52;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1.85;
-  word-break: keep-all;
+@media (max-width: 1199px) {
+  .color-page .projects-description {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+  }
 }
 
-/* 프로젝트 부제목 */
-.color-page .portfolio-subtitle {
-  color: #536758;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-/* 펼쳐진 프로젝트 상세 설명 */
-.color-page .detail-section > p {
-  color: #4B5F52;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1.9;
-  word-break: keep-all;
-}
-
-/* 구현 기능 목록 */
-.color-page .detail-feature li {
-  color: #4B5F52;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.8;
-}
-
-/* 트러블슈팅 본문 */
-.color-page .trouble-body p {
-  color: #4B5F52;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.9;
-}
-
-/* 프로젝트 상세 부제목 */
-.color-page .detail-heading p {
-  color: #536758;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-/* 트러블슈팅 안내 문구 */
-.color-page .detail-help {
-  color: #536758;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-/* 모바일 글씨 크기 */
 @media (max-width: 480px) {
+  .color-page .projects-description,
   .color-page .portfolio-desc,
   .color-page .detail-section > p {
     font-size: 14px;
@@ -718,8 +685,49 @@
   .color-page .trouble-body p {
     font-size: 13px;
   }
+}
 
+
+/* =====================================
+   PROJECTS DESCRIPTION RESPONSIVE
+   PC 한 줄 / 모바일 자동 줄바꿈
+===================================== */
+
+/* PC */
+.color-page .projects-description {
+  width: 100%;
+  max-width: none;
+  color: #4B5F52;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.9;
+  white-space: nowrap;
+  word-break: keep-all;
+}
+
+/* 태블릿 및 작은 화면 */
+@media (max-width: 1199px) {
+  .color-page .projects-description {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 480px) {
   .color-page .projects-description {
     font-size: 15px;
+    white-space: normal;
+  }
+
+  .color-page .portfolio-desc,
+  .color-page .detail-section > p {
+    font-size: 14px;
+  }
+
+  .color-page .detail-feature li,
+  .color-page .trouble-body p {
+    font-size: 13px;
   }
 }
