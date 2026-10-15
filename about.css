@@ -536,3 +536,84 @@
   }
 
 }
+
+
+/* =====================================
+   ABOUT ME TEXT READABILITY
+   설명 글씨 가독성 개선
+===================================== */
+
+/* About Me 상단 설명 */
+.color-page .about-intro-desc {
+  color: #4B5F52;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.9;
+}
+
+/* My Story 자기소개 본문 */
+.color-page .about-story-content > p:not(.about-label) {
+  color: #4B5F52;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2;
+}
+
+/* Experience 카드 설명 */
+.color-page .experience-card p {
+  color: #4B5F52;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.9;
+}
+
+/* 프로젝트 개수 카드 설명 */
+.color-page .summary-card span {
+  color: #4B5F52;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* GPT 섹션 소개 문구 */
+.color-page .about-gpt-lead {
+  color: #4B5F52;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+/* GPT 영상 상세 설명 */
+.color-page .about-video-info > p:not(.about-label) {
+  color: #4B5F52;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.95;
+}
+
+/* 모바일 글씨 크기 조정 */
+@media (max-width: 600px) {
+
+  .color-page .about-intro-desc {
+    font-size: 15px;
+  }
+
+  .color-page .about-story-content > p:not(.about-label) {
+    font-size: 14px;
+  }
+
+  .color-page .experience-card p {
+    font-size: 14px;
+  }
+
+  .color-page .summary-card span {
+    font-size: 11px;
+  }
+
+  .color-page .about-gpt-lead {
+    font-size: 15px;
+  }
+
+  .color-page .about-video-info > p:not(.about-label) {
+    font-size: 14px;
+  }
+}
