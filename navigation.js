@@ -1,6 +1,5 @@
 // 페이지 이동, 메뉴 등
 
-
 document.addEventListener("DOMContentLoaded", () => {
 
   const menuToggle =
