@@ -392,5 +392,9 @@
 
 .color-page .skills-intro-desc {
   color: #4B5F52;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.9;
+  word-break: keep-all;
 }
 
