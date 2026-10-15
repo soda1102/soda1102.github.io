@@ -1,0 +1,538 @@
+/* 자기소개 css */
+/* =====================================
+   ABOUT ME PAGE
+   CREAM + DEEP GREEN
+===================================== */
+
+/* =====================================
+   ABOUT INTRO
+===================================== */
+
+.about-intro {
+  padding: 75px 0 55px;
+}
+
+.about-intro h1 {
+  margin: 12px 0 18px;
+
+  color: #293B2E;
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.about-intro h1 span,
+.about-section-heading h2 span {
+  color: #64876B;
+}
+
+.about-intro-desc {
+  color: #647064;
+  font-size: 16px;
+  line-height: 1.9;
+
+  word-break: keep-all;
+}
+
+/* =====================================
+   COMMON
+===================================== */
+
+.about-label {
+  margin: 0 0 16px;
+
+  color: #789079;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.about-section-heading {
+  margin-bottom: 30px;
+}
+
+.about-section-heading h2 {
+  margin: 0;
+
+  color: #293B2E;
+  font-size: clamp(28px, 3.5vw, 40px);
+  line-height: 1.4;
+  letter-spacing: -1.2px;
+
+  word-break: keep-all;
+}
+
+/* =====================================
+   MY STORY
+===================================== */
+
+.about-story {
+  padding: 50px;
+
+  background: #FFFEFA;
+  border: 1px solid #DDE2D6;
+  border-radius: 18px;
+}
+
+.about-story-content {
+  max-width: 850px;
+}
+
+.about-story h2 {
+  margin: 0 0 28px;
+
+  color: #293B2E;
+  font-size: clamp(26px, 3.2vw, 38px);
+  line-height: 1.5;
+  letter-spacing: -1.2px;
+
+  word-break: keep-all;
+}
+
+.about-story h2 span {
+  color: #64876B;
+}
+
+.about-story-content > p:not(.about-label) {
+  margin: 0 0 18px;
+
+  color: #647064;
+  font-size: 15px;
+  line-height: 2;
+
+  word-break: keep-all;
+}
+
+.about-story-content > p:last-child {
+  margin-bottom: 0;
+}
+
+/* =====================================
+   MY EXPERIENCE
+===================================== */
+
+.about-experience {
+  padding: 100px 0 45px;
+}
+
+.about-experience-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.experience-card {
+  min-width: 0;
+  padding: 28px;
+
+  background: #FFFEFA;
+  border: 1px solid #DDE2D6;
+  border-radius: 14px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  border-color: #A6BBA8;
+}
+
+.experience-number {
+  margin-bottom: 30px;
+
+  color: #8EAA91;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.experience-card h3 {
+  margin: 0 0 16px;
+
+  color: #355640;
+  font-size: 18px;
+}
+
+.experience-card p {
+  margin: 0;
+
+  color: #647064;
+  font-size: 14px;
+  line-height: 1.9;
+
+  word-break: keep-all;
+}
+
+/* =====================================
+   PROJECT SUMMARY
+===================================== */
+
+.about-summary {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+  padding: 25px 0 100px;
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 24px 28px;
+
+  background: #E4EBDD;
+  border-radius: 12px;
+}
+
+.summary-card strong {
+  color: #355640;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.summary-card span {
+  color: #647064;
+  font-size: 13px;
+}
+
+/* =====================================
+   GPT INTRODUCTION
+===================================== */
+
+.about-gpt {
+  padding: 85px 0 100px;
+
+  border-top: 1px solid #DDE2D6;
+}
+
+.about-gpt-lead {
+  margin-top: 15px;
+
+  color: #647064;
+  font-size: 16px;
+  line-height: 1.8;
+
+  word-break: keep-all;
+}
+
+/* =====================================
+   GPT VIDEO LAYOUT
+   세로형 9:16 영상
+===================================== */
+
+/*
+   PC 화면:
+   왼쪽 - 세로 영상
+   오른쪽 - 영상 소개글
+*/
+
+.about-video-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 360px)
+    minmax(0, 1fr);
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 65px;
+
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+/* =====================================
+   VIDEO CARD
+===================================== */
+
+.about-video-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 360px;
+
+  padding: 12px;
+
+  background: #E4EBDD;
+  border: 1px solid #D7E2D2;
+  border-radius: 20px;
+
+  box-shadow:
+    0 15px 35px rgba(40, 66, 45, 0.07);
+}
+
+/* 실제 세로 영상 */
+
+.about-video-area video {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+
+  background: #263C2E;
+  border-radius: 13px;
+}
+
+/* =====================================
+   VIDEO DESCRIPTION
+===================================== */
+
+.about-video-info {
+  min-width: 0;
+}
+
+.about-video-info h3 {
+  margin: 0 0 24px;
+
+  color: #355640;
+
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.5;
+  letter-spacing: -1px;
+
+  word-break: keep-all;
+}
+
+.about-video-info > p:not(.about-label) {
+  margin: 0 0 18px;
+
+  color: #647064;
+  font-size: 14px;
+  line-height: 1.95;
+
+  word-break: keep-all;
+}
+
+/* =====================================
+   VIDEO KEYWORDS
+===================================== */
+
+.about-video-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: 26px;
+}
+
+.about-video-tags span {
+  padding: 8px 12px;
+
+  background: #E4EBDD;
+  border-radius: 999px;
+
+  color: #52725A;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* =====================================
+   ENDING SECTION
+===================================== */
+
+.about-ending {
+  padding: 60px 0 110px;
+
+  text-align: center;
+  border-top: 1px solid #DDE2D6;
+}
+
+.about-ending h2 {
+  margin: 0 0 30px;
+
+  color: #355640;
+
+  font-size: clamp(25px, 3.4vw, 38px);
+  line-height: 1.6;
+  letter-spacing: -1px;
+
+  word-break: keep-all;
+}
+
+.about-ending .btn-primary {
+  display: inline-flex;
+}
+
+/* =====================================
+   RESPONSIVE - TABLET
+===================================== */
+
+@media (max-width: 900px) {
+
+  /* 경험 카드 2열 */
+
+  .about-experience-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  /* 영상과 설명을 세로로 배치 */
+
+  .about-video-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  /* 영상 가운데 정렬 */
+
+  .about-video-area {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .about-video-info {
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* =====================================
+   RESPONSIVE - MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+  /* ABOUT INTRO */
+
+  .about-intro {
+    padding: 50px 0 35px;
+  }
+
+  .about-intro h1 {
+    font-size: 40px;
+  }
+
+  /* MY STORY */
+
+  .about-story {
+    padding: 28px 22px;
+  }
+
+  .about-story h2 {
+    font-size: 25px;
+  }
+
+  .about-story-content > p:not(.about-label) {
+    font-size: 14px;
+  }
+
+  /* EXPERIENCE */
+
+  .about-experience {
+    padding: 75px 0 30px;
+  }
+
+  .about-experience-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .experience-card {
+    padding: 24px;
+  }
+
+  /* PROJECT SUMMARY */
+
+  .about-summary {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 7px;
+    padding-bottom: 75px;
+  }
+
+  .summary-card {
+    padding: 17px 9px;
+    text-align: center;
+  }
+
+  .summary-card strong {
+    font-size: 25px;
+  }
+
+  .summary-card span {
+    font-size: 10px;
+  }
+
+  /* GPT INTRO */
+
+  .about-gpt {
+    padding: 65px 0 75px;
+  }
+
+  .about-gpt-lead {
+    font-size: 14px;
+  }
+
+  /* VIDEO LAYOUT */
+
+  .about-video-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* 세로 영상 크기 */
+
+  .about-video-area {
+    width: 100%;
+    max-width: 270px;
+
+    padding: 8px;
+    margin: 0 auto;
+
+    border-radius: 16px;
+  }
+
+  .about-video-area video {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 9 / 16;
+    object-fit: contain;
+
+    border-radius: 10px;
+  }
+
+  /* 영상 설명 */
+
+  .about-video-info h3 {
+    font-size: 27px;
+  }
+
+  .about-video-info > p:not(.about-label) {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  /* ENDING */
+
+  .about-ending {
+    padding: 55px 0 85px;
+  }
+}
+
+/* =====================================
+   ACCESSIBILITY
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .experience-card {
+    transition: none;
+  }
+
+}
