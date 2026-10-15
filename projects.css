@@ -1,0 +1,542 @@
+/* 프로젝트 탭 레이아웃 */
+
+/* =====================================
+   PROJECTS INTERACTIVE LAYOUT
+   Cream & Deep Green
+===================================== */
+
+/* 프로젝트 필터 */
+
+.color-page .projects-section .project-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 12px 0 12px;
+}
+
+.color-page .projects-section .project-tab {
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 1px solid #D5DED1;
+  background: #FFFEFA;
+  color: #47684F;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.color-page .projects-section .project-tab.is-active {
+  background: #355640;
+  border-color: #355640;
+  color: white;
+}
+
+.project-guide {
+  margin: 0 0 25px;
+  color: #788879;
+  font-size: 13px;
+}
+
+/* =====================================
+   GRID
+===================================== */
+
+.color-page .portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 24px;
+  width: 100%;
+  padding-bottom: 100px;
+}
+
+/* =====================================
+   PROJECT CARD
+===================================== */
+
+.color-page .portfolio-card.project {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  background: #FFFEFA;
+  border: 1px solid #DDE2D6;
+  border-radius: 18px;
+
+  box-shadow: 0 4px 18px rgba(40, 66, 45, .04);
+
+  transition:
+    box-shadow .3s ease,
+    border-color .3s ease,
+    transform .3s ease;
+}
+
+.color-page .portfolio-card.project:hover {
+  border-color: #8DAA90;
+}
+
+.color-page .portfolio-card.project[hidden] {
+  display: none !important;
+}
+
+/* 선택된 카드는 가로 2칸 차지 */
+
+.color-page .portfolio-card.project.is-expanded {
+  grid-column: 1 / -1;
+  border-color: #9BB39D;
+  box-shadow: 0 16px 40px rgba(40, 66, 45, .09);
+}
+
+/* =====================================
+   PROJECT OPEN BUTTON
+===================================== */
+
+.color-page .project-open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.project-open:focus-visible,
+.project-close:focus-visible {
+  outline: 3px solid #75987A;
+  outline-offset: -3px;
+}
+
+/* =====================================
+   IMAGE
+===================================== */
+
+/* 작은 카드 이미지 */
+
+.color-page .portfolio-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 220px;
+  padding: 15px;
+  overflow: hidden;
+
+  background: #F8F9F5;
+}
+
+.color-page .portfolio-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  margin: auto;
+  transform: none;
+}
+
+/* 마우스를 올려도 확대되지 않음 */
+
+.color-page .portfolio-card:hover .portfolio-image img {
+  transform: none;
+}
+
+/* 펼쳐진 프로젝트는 위쪽 소개 영역을
+   이미지 + 텍스트 2열로 표시 */
+
+.color-page .portfolio-card.is-expanded .project-open {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr)
+                         minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+  padding: 28px;
+}
+
+.color-page .portfolio-card.is-expanded .portfolio-image {
+  height: 300px;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.color-page .portfolio-card.is-expanded .portfolio-info {
+  padding: 12px;
+}
+
+/* =====================================
+   CARD TEXT
+===================================== */
+
+.color-page .portfolio-info {
+  padding: 25px;
+}
+
+.color-page .portfolio-info h2 {
+  font-size: 25px;
+  color: #293B2E;
+}
+
+.color-page .portfolio-desc {
+  min-height: 0;
+  line-height: 1.8;
+}
+
+.color-page .portfolio-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.color-page .portfolio-stack span {
+  padding: 6px 11px;
+  border-radius: 6px;
+  background: #EAF0E5;
+  color: #52725A;
+  font-size: 11px;
+}
+
+.color-page .portfolio-more {
+  margin-top: 22px;
+  color: #355640;
+  font-weight: 700;
+}
+
+.color-page .is-expanded .portfolio-more {
+  color: #698B6D;
+}
+
+/* =====================================
+   EXPANDED DETAILS
+===================================== */
+
+.project-detail {
+  padding: 0 42px 40px;
+  animation: detailAppear .35s ease;
+}
+
+.project-detail[hidden] {
+  display: none !important;
+}
+
+@keyframes detailAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* DETAIL HEADING */
+
+.detail-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 35px 0 24px;
+  border-top: 1px solid #E1E7DC;
+}
+
+.detail-eyebrow {
+  margin: 0 0 10px;
+  color: #7D947F;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.detail-heading h3 {
+  margin: 0 0 5px;
+  color: #293B2E;
+  font-size: 30px;
+}
+
+.detail-heading p {
+  color: #788879;
+}
+
+.project-close {
+  flex-shrink: 0;
+  padding: 10px 16px;
+  border: 1px solid #CEDCCC;
+  border-radius: 8px;
+  background: #F5F8F1;
+  color: #355640;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* METADATA */
+
+.detail-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 32px;
+}
+
+.detail-meta > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  padding: 17px;
+  border-radius: 10px;
+  background: #F5F7F2;
+}
+
+.detail-meta strong {
+  color: #749078;
+  font-size: 11px;
+}
+
+.detail-meta span {
+  color: #344D3A;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* SECTION */
+
+.detail-section {
+  padding: 28px 0;
+  border-top: 1px solid #E5EAE2;
+}
+
+.detail-section h4 {
+  margin: 0 0 20px;
+  color: #355640;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.detail-section > p {
+  color: #647064;
+  font-size: 14px;
+  line-height: 1.9;
+  word-break: keep-all;
+}
+
+.detail-lead {
+  margin-bottom: 18px;
+}
+
+/* FEATURE GRID */
+
+.detail-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.detail-feature {
+  padding: 22px;
+  background: #F6F8F3;
+  border: 1px solid #E1E9DF;
+  border-radius: 12px;
+}
+
+.detail-feature h5 {
+  margin: 0 0 14px;
+  color: #355640;
+  font-size: 15px;
+}
+
+.detail-feature ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.detail-feature li {
+  margin: 8px 0;
+  color: #647064;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* DETAIL TECH TAGS */
+
+.detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.detail-tags span {
+  padding: 9px 13px;
+  background: #EAF0E5;
+  color: #466A4D;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =====================================
+   TROUBLESHOOTING
+===================================== */
+
+.detail-help {
+  margin-bottom: 17px;
+}
+
+.trouble-item {
+  margin: 12px 0;
+  border: 1px solid #D9E5D6;
+  border-radius: 10px;
+  background: #F9FBF7;
+  overflow: hidden;
+}
+
+.trouble-item summary {
+  padding: 18px 20px;
+  color: #355640;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.trouble-item[open] summary {
+  border-bottom: 1px solid #D9E5D6;
+}
+
+.trouble-body {
+  padding: 14px 20px 20px;
+}
+
+.trouble-body p {
+  margin: 10px 0;
+  color: #596B5C;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.trouble-body strong {
+  display: inline-block;
+  min-width: 73px;
+  margin-right: 9px;
+  color: #355640;
+}
+
+/* =====================================
+   LINKS
+===================================== */
+
+.detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 28px;
+  border-top: 1px solid #E1E7DC;
+}
+
+.detail-links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 18px;
+
+  border: 1px solid #B9CEB9;
+  border-radius: 8px;
+
+  color: #355640;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.detail-links a:hover {
+  background: #EAF0E5;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 800px) {
+
+  .color-page .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .color-page .portfolio-card.is-expanded .project-open {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .color-page .portfolio-card.is-expanded .portfolio-image {
+    height: 240px;
+  }
+
+  .color-page .portfolio-image {
+    height: 190px;
+  }
+
+  .project-detail {
+    padding: 0 22px 30px;
+  }
+
+  .detail-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .color-page .portfolio-image {
+    height: 170px;
+  }
+
+  .color-page .portfolio-card.is-expanded .portfolio-image {
+    height: 190px;
+  }
+
+  .color-page .portfolio-info {
+    padding: 20px;
+  }
+
+  .detail-heading {
+    flex-direction: column;
+  }
+
+  .detail-heading h3 {
+    font-size: 25px;
+  }
+
+  .project-detail {
+    padding: 0 15px 25px;
+  }
+
+  .detail-feature {
+    padding: 16px;
+  }
+
+  .trouble-body {
+    padding: 12px 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-detail {
+    animation: none;
+  }
+}
