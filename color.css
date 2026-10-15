@@ -771,7 +771,7 @@ body.color-page {
   );
 }
 
-/* 모바일 반응형 */
+/* 토끼 모바일 반응형 */
 @media (max-width: 480px) {
   .color-page .floating-rabbit {
     width: 75px;
@@ -780,3 +780,28 @@ body.color-page {
   }
 }
 
+
+/* =====================================
+   HOME CODE CARD RESPONSIVE(반응형)
+===================================== */
+
+/* 큰 PC 화면 */
+@media (min-width: 1200px) {
+  .color-page .profile-code {
+    max-width: 480px;
+  }
+}
+
+/* 태블릿 */
+@media (min-width: 801px) and (max-width: 1199px) {
+  .color-page .profile-code {
+    max-width: 400px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 800px) {
+  .color-page .profile-code {
+    max-width: 100%;
+  }
+}
