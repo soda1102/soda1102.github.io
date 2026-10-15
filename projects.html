@@ -1,1 +1,265 @@
 <!-- 프로젝트 목록 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="김소현의 프로젝트">
+
+  <title>Projects | 김소현</title>
+
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="color.css">
+
+  <script src="navigation.js" defer></script>
+</head>
+
+<body class="color-page">
+
+  <!-- HEADER -->
+  <header class="site-header">
+
+    <a href="index.html" class="brand">
+      SOHYUN<span>.</span>DEV
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="메뉴 열기"
+      aria-expanded="false"
+      aria-controls="site-nav">
+      ☰
+    </button>
+
+    <nav id="site-nav"
+         class="site-nav"
+         aria-label="주 메뉴">
+
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT ME</a>
+      <a href="projects.html">PROJECTS</a>
+      <a href="skills.html">SKILLS</a>
+      <a href="contact.html">CONTACT</a>
+
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="color-main">
+
+    <!-- PAGE INTRO -->
+    <section class="projects-intro">
+
+      <p class="page-eyebrow">
+        02 / PORTFOLIO
+      </p>
+
+      <h1>My Projects<span>.</span></h1>
+
+      <p class="projects-description">
+        직접 경험하고 구현한 프로젝트를 소개합니다.
+        기획부터 개발, 문제 해결까지의 과정을
+        각 프로젝트에 담았습니다.
+      </p>
+
+    </section>
+
+    <!-- PROJECT FILTER -->
+    <section class="projects-section">
+
+      <div class="project-tabs"
+           role="group"
+           aria-label="프로젝트 필터">
+
+        <button class="project-tab is-active"
+                data-filter="all"
+                aria-pressed="true">
+
+          ALL
+          <span id="allCount">3</span>
+        </button>
+
+        <button class="project-tab"
+                data-filter="team"
+                aria-pressed="false">
+
+          TEAM
+          <span id="teamCount">2</span>
+        </button>
+
+        <button class="project-tab"
+                data-filter="personal"
+                aria-pressed="false">
+
+          PERSONAL
+          <span id="personalCount">1</span>
+        </button>
+
+      </div>
+
+      <!-- PROJECT CARDS -->
+      <div class="portfolio-grid">
+
+        <!-- ROAD LIBRARY -->
+        <article class="portfolio-card project"
+                 data-category="team">
+
+          <a href="project-the_road_library.html"
+             class="portfolio-card-link">
+
+            <div class="portfolio-image">
+              <img
+                src="images/road-library-home.jpg"
+                alt="도서관 프로젝트 홈페이지"
+                loading="lazy">
+            </div>
+
+            <div class="portfolio-info">
+
+              <p class="portfolio-category">
+                TEAM PROJECT · MINI
+              </p>
+
+              <h2>도(道)서관</h2>
+
+              <p class="portfolio-subtitle">
+                The Road Library
+              </p>
+
+              <p class="portfolio-desc">
+                도로 위 야생동물을 AI로 탐지하고
+                운전자들이 위험 정보를 공유할 수 있도록
+                구현한 Vision AI 서비스입니다.
+              </p>
+
+              <div class="portfolio-stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Flask</span>
+              </div>
+
+              <span class="portfolio-more">
+                View Detail ↗
+              </span>
+
+            </div>
+
+          </a>
+        </article>
+        
+        <!-- WEATHER AI -->
+        <article class="portfolio-card project"
+                 data-category="team">
+
+          <a href="project-weather_ai.html"
+             class="portfolio-card-link">
+
+            <div class="portfolio-image">
+              <img
+                src="images/weather-ai-dashboard.jpg"
+                alt="Weather-AI 관리자 대시보드"
+                loading="lazy">
+            </div>
+
+            <div class="portfolio-info">
+
+              <p class="portfolio-category">
+                TEAM PROJECT · FINAL
+              </p>
+
+              <h2>Weather-AI</h2>
+
+              <p class="portfolio-subtitle">
+                날씨의 아이
+              </p>
+
+              <p class="portfolio-desc">
+                악천후 및 위험 차량을 AI로 탐지하고
+                관리자에게 위험 상황을 전달하는
+                도로 안전 관제 플랫폼입니다.
+              </p>
+
+              <div class="portfolio-stack">
+                <span>Next.js</span>
+                <span>TypeScript</span>
+                <span>Flask</span>
+                <span>AI</span>
+              </div>
+
+              <span class="portfolio-more">
+                View Detail ↗
+              </span>
+
+            </div>
+
+          </a>
+        </article>
+
+        <!-- TRIP READY -->
+        <article class="portfolio-card project"
+                 data-category="personal">
+
+          <a href="project-trip_ready.html"
+             class="portfolio-card-link">
+
+            <div class="portfolio-image">
+              <img
+                src="images/trip-ready-dashboard.png"
+                alt="Trip Ready 여행 준비물 체크리스트"
+                loading="lazy">
+            </div>
+
+            <div class="portfolio-info">
+
+              <p class="portfolio-category">
+                PERSONAL PROJECT
+              </p>
+
+              <h2>Trip Ready</h2>
+
+              <p class="portfolio-subtitle">
+                여행 준비물 체크리스트
+              </p>
+
+              <p class="portfolio-desc">
+                여행 전 필요한 준비물을 정리하고
+                챙긴 물건을 체크할 수 있는 웹사이트입니다.
+              </p>
+
+              <div class="portfolio-stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+
+              <span class="portfolio-more">
+                View Detail ↗
+              </span>
+
+            </div>
+
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <span>© 2026 Kim Sohyun</span>
+    <span>Designed & Developed with care.</span>
+  </footer>
+
+</body>
+</html>
