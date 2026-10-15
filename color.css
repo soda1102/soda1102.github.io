@@ -141,7 +141,7 @@ body.color-page {
 
 .landing h1 {
   margin: 0 0 26px;
-  font-size: clamp(36px, 4.4vw, 66px);
+  font-size: clamp(32px, 3.5vw, 52px);
   font-weight: 800;
   letter-spacing: -2.5px;
   line-height: 1.3;
