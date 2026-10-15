@@ -594,7 +594,7 @@ body.color-page {
 
 .portfolio-image {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 190px;
   overflow: hidden;
   background: #E4EBDD;
 }
@@ -606,6 +606,13 @@ body.color-page {
   object-fit: cover;
   object-position: top center;
   transition: transform .35s ease;
+}
+
+/* 모바일 이미지 크기 */
+@media (max-width: 800px) {
+  .portfolio-image {
+    height: 170px;
+  }
 }
 
 .portfolio-card:hover .portfolio-image img {
