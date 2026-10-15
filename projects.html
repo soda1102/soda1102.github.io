@@ -6,260 +6,632 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
-
   <meta name="description"
         content="김소현의 프로젝트">
-
   <title>Projects | 김소현</title>
 
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
-
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="color.css">
+  <link rel="stylesheet" href="projects.css">
 
   <script src="navigation.js" defer></script>
 </head>
 
 <body class="color-page">
 
-  <!-- HEADER -->
-  <header class="site-header">
+<!-- HEADER -->
+<header class="site-header">
+  <a href="index.html" class="brand">
+    SOHYUN<span>.</span>DEV
+  </a>
 
-    <a href="index.html" class="brand">
-      SOHYUN<span>.</span>DEV
-    </a>
+  <button class="menu-toggle" type="button"
+          aria-label="메뉴 열기"
+          aria-expanded="false"
+          aria-controls="site-nav">☰</button>
 
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-label="메뉴 열기"
-      aria-expanded="false"
-      aria-controls="site-nav">
-      ☰
-    </button>
+  <nav id="site-nav" class="site-nav"
+       aria-label="주 메뉴">
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT ME</a>
+    <a href="projects.html">PROJECTS</a>
+    <a href="skills.html">SKILLS</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+</header>
 
-    <nav id="site-nav"
-         class="site-nav"
-         aria-label="주 메뉴">
+<!-- MAIN -->
+<main class="color-main">
 
-      <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT ME</a>
-      <a href="projects.html">PROJECTS</a>
-      <a href="skills.html">SKILLS</a>
-      <a href="contact.html">CONTACT</a>
+  <section class="projects-intro">
+    <p class="page-eyebrow">02 / PORTFOLIO</p>
+    <h1>My Projects<span>.</span></h1>
+    <p class="projects-description">
+      직접 경험하고 구현한 프로젝트를 소개합니다.
+      각 프로젝트를 클릭하면 담당 역할부터
+      문제 해결 과정까지 확인할 수 있습니다.
+    </p>
+  </section>
 
-    </nav>
-  </header>
+  <section class="projects-section"
+           aria-label="프로젝트 목록">
 
-  <!-- MAIN -->
-  <main class="color-main">
+    <!-- 프로젝트 필터 -->
+    <div class="project-tabs" role="group"
+         aria-label="프로젝트 유형">
 
-    <!-- PAGE INTRO -->
-    <section class="projects-intro">
+      <button type="button"
+              class="project-tab is-active"
+              data-filter="team"
+              aria-pressed="true">
+        TEAM <span id="teamCount">2</span>
+      </button>
 
-      <p class="page-eyebrow">
-        02 / PORTFOLIO
-      </p>
+      <button type="button"
+              class="project-tab"
+              data-filter="personal"
+              aria-pressed="false">
+        PERSONAL <span id="personalCount">1</span>
+      </button>
 
-      <h1>My Projects<span>.</span></h1>
+    </div>
 
-      <p class="projects-description">
-        직접 경험하고 구현한 프로젝트를 소개합니다.
-        기획부터 개발, 문제 해결까지의 과정을
-        각 프로젝트에 담았습니다.
-      </p>
+    <p class="project-guide">
+      프로젝트 카드를 클릭하면 세부 내용을 확인할 수 있습니다.
+    </p>
 
-    </section>
+    <div class="portfolio-grid" id="portfolioGrid">
 
-    <!-- PROJECT FILTER -->
-    <section class="projects-section">
+      <!-- ==========================
+           PROJECT 01 : THE ROAD LIBRARY
+      =========================== -->
 
-      <div class="project-tabs"
-           role="group"
-           aria-label="프로젝트 필터">
+      <article class="portfolio-card project"
+               data-category="team"
+               id="project-road">
 
-        <button class="project-tab is-active"
-                data-filter="all"
-                aria-pressed="true">
+        <button type="button"
+                class="project-open"
+                aria-expanded="false"
+                aria-controls="detail-road">
 
-          ALL
-          <span id="allCount">3</span>
-        </button>
+          <div class="portfolio-image">
+            <img src="images/road-library-home.jpg"
+                 alt="도(道)서관 메인 화면"
+                 loading="lazy">
+          </div>
 
-        <button class="project-tab"
-                data-filter="team"
-                aria-pressed="false">
+          <div class="portfolio-info">
+            <p class="portfolio-category">
+              TEAM PROJECT · MINI
+            </p>
 
-          TEAM
-          <span id="teamCount">2</span>
-        </button>
+            <h2>도(道)서관</h2>
+            <p class="portfolio-subtitle">
+              The Road Library
+            </p>
 
-        <button class="project-tab"
-                data-filter="personal"
-                aria-pressed="false">
+            <p class="portfolio-desc">
+              도로 위 야생동물을 탐지하고 운전자 간
+              위험 정보를 공유하는 Vision AI 서비스
+            </p>
 
-          PERSONAL
-          <span id="personalCount">1</span>
-        </button>
-
-      </div>
-
-      <!-- PROJECT CARDS -->
-      <div class="portfolio-grid">
-
-        <!-- ROAD LIBRARY -->
-        <article class="portfolio-card project"
-                 data-category="team">
-
-          <a href="project-the_road_library.html"
-             class="portfolio-card-link">
-
-            <div class="portfolio-image">
-              <img
-                src="images/road-library-home.jpg"
-                alt="도서관 프로젝트 홈페이지"
-                loading="lazy">
+            <div class="portfolio-stack">
+              <span>HTML |</span>
+              <span> CSS |</span>
+              <span> JavaScript |</span>
+              <span> Flask</span>
             </div>
 
-            <div class="portfolio-info">
+            <span class="portfolio-more">
+              자세히 보기 <span aria-hidden="true">↗</span>
+            </span>
+          </div>
+        </button>
 
-              <p class="portfolio-category">
-                TEAM PROJECT · MINI
+        <!-- 펼쳐질 상세 콘텐츠 -->
+        <div class="project-detail"
+             id="detail-road"
+             hidden>
+
+          <div class="detail-heading">
+            <div>
+              <p class="detail-eyebrow">
+                MINI PROJECT / TEAM OF 5
               </p>
+              <h3>도(道)서관</h3>
+              <p>The Road Library</p>
+            </div>
 
-              <h2>도(道)서관</h2>
+            <button type="button"
+                    class="project-close"
+                    aria-label="도서관 프로젝트 접기">
+              ✕ 닫기
+            </button>
+          </div>
 
-              <p class="portfolio-subtitle">
-                The Road Library
-              </p>
+          <div class="detail-meta">
+            <div>
+              <strong>Duration</strong>
+              <span>2026.03.10 ~ 04.07</span>
+            </div>
+            <div>
+              <strong>Role</strong>
+              <span>Frontend · Backend · AI Modeling</span>
+            </div>
+            <div>
+              <strong>Team</strong>
+              <span>5명</span>
+            </div>
+          </div>
 
-              <p class="portfolio-desc">
-                도로 위 야생동물을 AI로 탐지하고
-                운전자들이 위험 정보를 공유할 수 있도록
-                구현한 Vision AI 서비스입니다.
-              </p>
+          <section class="detail-section">
+            <h4>01. Overview</h4>
+            <p>
+              산간 지형이 많은 도로에서 발생하는
+              로드킬 및 2차 사고 위험을 줄이기 위한
+              Vision AI 기반 서비스입니다.
+              YOLO11로 야생동물을 탐지하고,
+              운전자들이 커뮤니티를 통해 위험 정보를
+              공유할 수 있도록 구성했습니다.
+            </p>
+          </section>
 
-              <div class="portfolio-stack">
-                <span>HTML |</span>
-                <span> CSS |</span>
-                <span> JavaScript |</span>
-                <span> Flask</span>
+          <section class="detail-section">
+            <h4>02. What I Built</h4>
+            <p class="detail-lead">
+              커뮤니티 기능의 프론트엔드와
+              Flask 백엔드를 함께 구현했습니다.
+            </p>
+
+            <div class="detail-feature-grid">
+              <div class="detail-feature">
+                <h5>Community</h5>
+                <ul>
+                  <li>게시글 댓글 및 대댓글 구현</li>
+                  <li>공감, 스크랩, 신고 기능</li>
+                  <li>인기글 자동 등록</li>
+                  <li>공지사항 고정 기능</li>
+                </ul>
               </div>
 
-              <span class="portfolio-more">
-                View Detail ↗
-              </span>
+              <div class="detail-feature">
+                <h5>Backend & AI</h5>
+                <ul>
+                  <li>Flask 기반 CRUD API 개발</li>
+                  <li>DB 쿼리 작성 및 데이터 연동</li>
+                  <li>AI 데이터 수집 및 라벨링 참여</li>
+                  <li>모델 학습 최적화 작업 참여</li>
+                </ul>
+              </div>
+            </div>
+          </section>
 
+          <section class="detail-section">
+            <h4>03. Tech Stack</h4>
+            <div class="detail-tags">
+              <span>HTML5 |</span>
+              <span> CSS3 |</span>
+              <span> JavaScript |</span>
+              <span> Bootstrap |</span>
+              <span> Flask |</span>
+              <span> TiDB / MySQL |</span>
+              <span> YOLO11 |</span>
+              <span> PyTorch |</span>
+              <span> Cloudinary</span>
+            </div>
+          </section>
+
+          <section class="detail-section">
+            <h4>04. Troubleshooting</h4>
+            <p class="detail-help">
+              문제 해결 사례를 클릭하면 과정이 펼쳐집니다.
+            </p>
+
+            <details class="trouble-item">
+              <summary>
+                데이터셋 클래스 불균형 문제
+              </summary>
+              <div class="trouble-body">
+                <p><strong>Problem</strong>
+                  특정 동물 클래스의 라벨 수가
+                  다른 클래스에 비해 지나치게 많았습니다.
+                </p>
+                <p><strong>Cause</strong>
+                  데이터 증강 설정으로
+                  클래스 불균형이 심화되었습니다.
+                </p>
+                <p><strong>Solution</strong>
+                  탐지 클래스를 멧돼지·너구리·고라니
+                  3종으로 재구성하고, 전처리를 조정한 뒤
+                  YOLO 자체 증강으로 재학습했습니다.
+                </p>
+              </div>
+            </details>
+
+            <details class="trouble-item">
+              <summary>
+                옵티마이저 비교 · SGD vs AdamW
+              </summary>
+              <div class="trouble-body">
+                <p><strong>Problem</strong>
+                  모델 학습에 적합한 옵티마이저를
+                  선택해야 했습니다.
+                </p>
+                <p><strong>Cause</strong>
+                  AdamW는 수렴 속도가 빨랐지만
+                  과적합 경향을 보였습니다.
+                </p>
+                <p><strong>Solution</strong>
+                  두 옵티마이저를 비교 실험하고
+                  일반화 성능을 고려해
+                  SGD를 최종 선택했습니다.
+                </p>
+              </div>
+            </details>
+
+            <details class="trouble-item">
+              <summary>
+                GPU 학습 환경 문제
+              </summary>
+              <div class="trouble-body">
+                <p><strong>Problem</strong>
+                  Colab GPU의 성능과 이용 시간에
+                  제약이 있었습니다.
+                </p>
+                <p><strong>Cause</strong>
+                  모델 학습이 장시간 진행되면서
+                  컴퓨팅 자원이 부족했습니다.
+                </p>
+                <p><strong>Solution</strong>
+                  Vast.ai 환경을 거쳐 자체 GPU
+                  RTX 4070 Ti를 활용하도록
+                  학습 환경을 변경했습니다.
+                </p>
+              </div>
+            </details>
+          </section>
+
+          <div class="detail-links">
+            <a href="https://github.com/MBCAcademy3-3Team/the-road-library"
+               target="_blank" rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+            <a href="http://52.78.98.112/"
+               target="_blank" rel="noopener noreferrer">
+              Live Demo ↗
+            </a>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- ==========================
+           PROJECT 02 : WEATHER-AI
+      =========================== -->
+
+      <article class="portfolio-card project"
+               data-category="team"
+               id="project-weather">
+
+        <button type="button"
+                class="project-open"
+                aria-expanded="false"
+                aria-controls="detail-weather">
+
+          <div class="portfolio-image">
+            <img src="images/weather-ai-dashboard.jpg"
+                 alt="Weather-AI 관리자 대시보드"
+                 loading="lazy">
+          </div>
+
+          <div class="portfolio-info">
+            <p class="portfolio-category">
+              TEAM PROJECT · FINAL
+            </p>
+
+            <h2>Weather-AI</h2>
+            <p class="portfolio-subtitle">
+              날씨의 아이
+            </p>
+
+            <p class="portfolio-desc">
+              악천후와 위험 차량을 탐지하고
+              관리자에게 위험 정보를 전달하는
+              AI 기반 도로 안전 플랫폼
+            </p>
+
+            <div class="portfolio-stack">
+              <span>Next.js |</span>
+              <span> TypeScript |</span>
+              <span> Flask |</span>
+              <span> AI</span>
             </div>
 
-          </a>
-        </article>
-        
-        <!-- WEATHER AI -->
-        <article class="portfolio-card project"
-                 data-category="team">
+            <span class="portfolio-more">
+              자세히 보기 <span aria-hidden="true">↗</span>
+            </span>
+          </div>
+        </button>
 
-          <a href="project-weather_ai.html"
-             class="portfolio-card-link">
+        <div class="project-detail"
+             id="detail-weather"
+             hidden>
 
-            <div class="portfolio-image">
-              <img
-                src="images/weather-ai-dashboard.jpg"
-                alt="Weather-AI 관리자 대시보드"
-                loading="lazy">
+          <div class="detail-heading">
+            <div>
+              <p class="detail-eyebrow">
+                FINAL PROJECT / TEAM OF 5
+              </p>
+              <h3>Weather-AI</h3>
+              <p>날씨의 아이</p>
             </div>
 
-            <div class="portfolio-info">
+            <button type="button"
+                    class="project-close"
+                    aria-label="Weather-AI 프로젝트 접기">
+              ✕ 닫기
+            </button>
+          </div>
 
-              <p class="portfolio-category">
-                TEAM PROJECT · FINAL
-              </p>
+          <div class="detail-meta">
+            <div>
+              <strong>Duration</strong>
+              <span>2026.05.06 ~ 07.07</span>
+            </div>
+            <div>
+              <strong>Role</strong>
+              <span>Frontend · Backend (관제센터)</span>
+            </div>
+            <div>
+              <strong>Team</strong>
+              <span>5명</span>
+            </div>
+          </div>
 
-              <h2>Weather-AI</h2>
+          <section class="detail-section">
+            <h4>01. Overview</h4>
+            <p>
+              악천후에 따른 관제 사각지대와
+              대형 화물차 사고 위험을 줄이기 위한
+              AI 도로 안전 플랫폼입니다.
+              기상 데이터와 AI 분석을 활용해
+              위험도를 판단하고, 탐지된 위험 상황을
+              관리자에게 전달합니다.
+            </p>
+          </section>
 
-              <p class="portfolio-subtitle">
-                날씨의 아이
-              </p>
+          <section class="detail-section">
+            <h4>02. What I Built</h4>
 
-              <p class="portfolio-desc">
-                악천후 및 위험 차량을 AI로 탐지하고
-                관리자에게 위험 상황을 전달하는
-                도로 안전 관제 플랫폼입니다.
-              </p>
-
-              <div class="portfolio-stack">
-                <span>Next.js |</span>
-                <span> TypeScript |</span>
-                <span> Flask |</span>
-                <span> AI</span>
+            <div class="detail-feature-grid">
+              <div class="detail-feature">
+                <h5>Admin Dashboard</h5>
+                <ul>
+                  <li>관리자 대시보드 UI 구현</li>
+                  <li>AI 분석 결과와 위험 정보 표시</li>
+                  <li>API 데이터 기반 화면 렌더링</li>
+                  <li>정보 중요도를 고려한 UI 구성</li>
+                </ul>
               </div>
 
-              <span class="portfolio-more">
-                View Detail ↗
-              </span>
+              <div class="detail-feature">
+                <h5>Frontend & Backend</h5>
+                <ul>
+                  <li>반응형 관리자 화면 개발</li>
+                  <li>관제센터 관련 백엔드 기능 구현</li>
+                  <li>프론트엔드와 API 연동</li>
+                  <li>데이터 표시 오류 분석 및 수정</li>
+                </ul>
+              </div>
+            </div>
+          </section>
 
+          <section class="detail-section">
+            <h4>03. Tech Stack</h4>
+            <div class="detail-tags">
+              <span>Next.js |</span>
+              <span> React |</span>
+              <span> TypeScript |</span>
+              <span> Tailwind CSS |</span>
+              <span> Python |</span>
+              <span> Flask |</span>
+              <span> REST API</span>
+            </div>
+          </section>
+
+          <section class="detail-section">
+            <h4>04. Troubleshooting</h4>
+
+            <details class="trouble-item">
+              <summary>
+                DB · 백엔드 필드명 불일치 문제
+              </summary>
+
+              <div class="trouble-body">
+                <p><strong>Problem</strong>
+                  관리자 대시보드에서 API 호출은
+                  성공했지만 일부 데이터가
+                  표시되지 않았습니다.
+                </p>
+
+                <p><strong>Cause</strong>
+                  Flask API 응답의 필드명과
+                  DB 컬럼명이 일치하지 않아
+                  프론트엔드에서 값을 정상적으로
+                  매칭하지 못했습니다.
+                </p>
+
+                <p><strong>Solution</strong>
+                  백엔드 코드와 데이터 구조를
+                  확인해 필드명 불일치를 수정하고,
+                  화면에서 정상적으로 출력되는지
+                  재검증했습니다.
+                </p>
+              </div>
+            </details>
+          </section>
+
+          <div class="detail-links">
+            <a href="https://github.com/WeatherAI-Team/weather-ai"
+               target="_blank" rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+            <a href="https://weather-ai-roan.vercel.app/"
+               target="_blank" rel="noopener noreferrer">
+              Live Demo ↗
+            </a>
+            <a href="https://weather-ai-roan.vercel.app/admin"
+               target="_blank" rel="noopener noreferrer">
+              Admin Demo ↗
+            </a>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- ==========================
+           PROJECT 03 : TRIP READY
+      =========================== -->
+
+      <article class="portfolio-card project"
+               data-category="personal"
+               id="project-trip">
+
+        <button type="button"
+                class="project-open"
+                aria-expanded="false"
+                aria-controls="detail-trip">
+
+          <div class="portfolio-image">
+            <img src="images/trip-ready-dashboard.png"
+                 alt="Trip Ready 여행 체크리스트"
+                 loading="lazy">
+          </div>
+
+          <div class="portfolio-info">
+            <p class="portfolio-category">
+              PERSONAL PROJECT
+            </p>
+
+            <h2>Trip Ready</h2>
+            <p class="portfolio-subtitle">
+              여행 준비물 체크리스트
+            </p>
+
+            <p class="portfolio-desc">
+              여행에 필요한 준비물을 정리하고,
+              챙긴 물건을 확인할 수 있는
+              웹 기반 체크리스트
+            </p>
+
+            <div class="portfolio-stack">
+              <span>HTML |</span>
+              <span> CSS |</span>
+              <span> JavaScript</span>
             </div>
 
-          </a>
-        </article>
+            <span class="portfolio-more">
+              자세히 보기 <span aria-hidden="true">↗</span>
+            </span>
+          </div>
+        </button>
 
-        <!-- TRIP READY -->
-        <article class="portfolio-card project"
-                 data-category="personal">
+        <div class="project-detail"
+             id="detail-trip"
+             hidden>
 
-          <a href="project-trip_ready.html"
-             class="portfolio-card-link">
-
-            <div class="portfolio-image">
-              <img
-                src="images/trip-ready-dashboard.png"
-                alt="Trip Ready 여행 준비물 체크리스트"
-                loading="lazy">
-            </div>
-
-            <div class="portfolio-info">
-
-              <p class="portfolio-category">
+          <div class="detail-heading">
+            <div>
+              <p class="detail-eyebrow">
                 PERSONAL PROJECT
               </p>
-
-              <h2>Trip Ready</h2>
-
-              <p class="portfolio-subtitle">
-                여행 준비물 체크리스트
-              </p>
-
-              <p class="portfolio-desc">
-                여행 전 필요한 준비물을 정리하고
-                챙긴 물건을 체크할 수 있는 웹사이트입니다.
-              </p>
-
-              <div class="portfolio-stack">
-                <span>HTML |</span>
-                <span> CSS |</span>
-                <span> JavaScript</span>
-              </div>
-
-              <span class="portfolio-more">
-                View Detail ↗
-              </span>
-
+              <h3>Trip Ready</h3>
+              <p>여행 준비물 체크리스트</p>
             </div>
 
-          </a>
-        </article>
+            <button type="button"
+                    class="project-close"
+                    aria-label="Trip Ready 프로젝트 접기">
+              ✕ 닫기
+            </button>
+          </div>
 
-      </div>
-    </section>
+          <section class="detail-section">
+            <h4>01. Overview</h4>
+            <p>
+              여행을 준비하면서 필요한 물건을
+              간편하게 확인하기 위해 제작한
+              개인 프로젝트입니다.
+              복잡한 여행 일정 관리보다는
+              준비물 체크라는 핵심 목적에
+              집중했습니다.
+            </p>
+          </section>
 
-  </main>
+          <section class="detail-section">
+            <h4>02. What I Built</h4>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <span>© 2026 Kim Sohyun</span>
-    <span>Designed & Developed with care.</span>
-  </footer>
+            <div class="detail-feature-grid">
+              <div class="detail-feature">
+                <h5>Planning & UI</h5>
+                <ul>
+                  <li>서비스 기획 및 화면 구성</li>
+                  <li>체크리스트 중심 UI 설계</li>
+                  <li>사용자 편의성을 고려한 디자인</li>
+                </ul>
+              </div>
+
+              <div class="detail-feature">
+                <h5>Development</h5>
+                <ul>
+                  <li>HTML/CSS/JS 기반 개발</li>
+                  <li>여행 준비물 확인 기능 구현</li>
+                  <li>GitHub 연동 및 웹 배포</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="detail-section">
+            <h4>03. Tech Stack</h4>
+            <div class="detail-tags">
+              <span>HTML5 |</span>
+              <span> CSS3 |</span>
+              <span> JavaScript |</span>
+              <span> Git |</span>
+              <span> GitHub</span>
+            </div>
+          </section>
+
+          <section class="detail-section">
+            <h4>04. Troubleshooting</h4>
+            <p class="detail-help">
+              추후 개발 과정에서 해결한 문제와
+              개선 사례를 추가할 예정입니다.
+            </p>
+          </section>
+
+          <div class="detail-links">
+            <a href="https://github.com/soda1102/trip_ready"
+               target="_blank" rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 Kim Sohyun</span>
+  <span>Designed & Developed with care.</span>
+</footer>
 
 </body>
 </html>
