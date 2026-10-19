@@ -617,3 +617,50 @@
     font-size: 14px;
   }
 }
+
+/* =====================================
+   ABOUT ME - MY STORY RESPONSIVE
+   화면 크기에 따른 본문 너비 조절
+===================================== */
+
+/* MY STORY 내용 전체 너비 사용 */
+.color-page .about-story-content {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+}
+
+/* 본문 글씨 */
+.color-page .about-story-content > p:not(.about-label) {
+  width: 100%;
+  max-width: none;
+
+  color: #4B5F52;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 2;
+
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 태블릿 */
+@media (max-width: 800px) {
+  .color-page .about-story {
+    padding: 30px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 480px) {
+  .color-page .about-story {
+    padding: 22px;
+  }
+
+  .color-page .about-story-content > p:not(.about-label) {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+}
+
