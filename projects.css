@@ -731,3 +731,71 @@
     font-size: 13px;
   }
 }
+
+
+/* =====================================
+   PROJECT QUICK LINKS
+   펼친 프로젝트 상단 바로가기
+===================================== */
+
+.color-page .project-quick-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  padding: 20px 0 24px;
+  border-top: 1px solid #E1E7DC;
+}
+
+.color-page .quick-links-label {
+  margin-right: 8px;
+  color: #536758;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.color-page .project-quick-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 15px;
+  border: 1px solid #B9CEB9;
+  border-radius: 8px;
+
+  background: #EAF0E5;
+  color: #355640;
+
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: background 0.2s ease;
+}
+
+.color-page .project-quick-links a:hover {
+  background: #DDEAD9;
+}
+
+.color-page .project-quick-links a:focus-visible {
+  outline: 3px solid #75987A;
+  outline-offset: 3px;
+}
+
+/* 모바일 */
+@media (max-width: 480px) {
+  .color-page .project-quick-links {
+    gap: 8px;
+    padding: 16px 0 20px;
+  }
+
+  .color-page .quick-links-label {
+    width: 100%;
+  }
+
+  .color-page .project-quick-links a {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+}
