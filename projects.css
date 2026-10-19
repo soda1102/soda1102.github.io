@@ -544,10 +544,10 @@
 }
 
 /* =====================================
-   PROJECT LINKS
+   PROJECT LINKS - 상단배치로 인해 하단 css 삭제
 ===================================== */
 
-.detail-links {
+/* .detail-links {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -572,7 +572,7 @@
 
 .detail-links a:hover {
   background: #EAF0E5;
-}
+} */
 
 /* =====================================
    RESPONSIVE - TABLET
