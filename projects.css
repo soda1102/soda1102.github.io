@@ -943,6 +943,12 @@
   }
 }
 
+/* 전체 기여도와 담당 기여도 사이 간격 */
+
+.contribution-second {
+  margin-top: 25px;
+}
+
 /* 작은 모바일 화면 대응 */
 
 @media (max-width: 360px) {
